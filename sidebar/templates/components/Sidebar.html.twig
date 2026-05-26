@@ -1,0 +1,8 @@
+{# @block content The sidebar header, body, and footer. #}
+<nav
+    {{ attributes.defaults({
+        class: 'flex h-full min-h-0 flex-col',
+    }) }}
+>
+    {%- block content %}{% endblock -%}
+</nav>

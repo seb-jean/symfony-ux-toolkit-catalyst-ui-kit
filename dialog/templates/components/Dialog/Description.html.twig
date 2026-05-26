@@ -1,0 +1,10 @@
+{# @block content The description text. #}
+{%- set _dialog_descriptionId = inject('dialog.descriptionId') -%}
+<twig:Text
+    id="{{ _dialog_descriptionId }}"
+    {{ ...attributes.defaults({
+        class: 'mt-2 text-pretty',
+    }) }}
+>
+    {{ block(outerBlocks.content) }}
+</twig:Text>

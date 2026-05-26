@@ -1,0 +1,10 @@
+{# @block content The title text. #}
+{%- set _dialog_titleId = inject('dialog.titleId') -%}
+<h2
+    id="{{ _dialog_titleId }}"
+    {{ attributes.defaults({
+        class: 'text-lg/6 font-semibold text-balance text-zinc-950 sm:text-base/6 dark:text-white',
+    }) }}
+>
+    {%- block content %}{% endblock -%}
+</h2>

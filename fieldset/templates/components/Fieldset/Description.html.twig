@@ -1,0 +1,11 @@
+{# @block content The description text. #}
+{%- set _fieldsetField_disabled = inject('fieldsetField.disabled', false) -%}
+<p
+    data-slot="description"
+    {% if _fieldsetField_disabled %}data-disabled{% endif %}
+    {{ attributes.defaults({
+        class: 'text-base/6 text-zinc-500 data-disabled:opacity-50 sm:text-sm/6 dark:text-zinc-400',
+    }) }}
+>
+    {%- block content %}{% endblock -%}
+</p>

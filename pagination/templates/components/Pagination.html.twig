@@ -1,0 +1,9 @@
+{# @block content The pagination controls. #}
+<nav
+    {{ attributes.defaults({
+        class: 'flex gap-x-2',
+        'aria-label': 'Page navigation',
+    }) }}
+>
+    {%- block content %}{% endblock -%}
+</nav>

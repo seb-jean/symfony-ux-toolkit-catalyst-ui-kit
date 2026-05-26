@@ -1,0 +1,8 @@
+{# @block content The dropdown button and menu. #}
+<el-dropdown
+    {{ attributes.defaults({
+        class: 'inline-block',
+    }) }}
+>
+    {%- block content %}{% endblock -%}
+</el-dropdown>

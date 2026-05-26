@@ -1,0 +1,8 @@
+{# @block content The label text. #}
+<span
+    {{ attributes.defaults({
+        class: 'ml-2.5 truncate first:ml-0 sm:ml-2 sm:first:ml-0',
+    }) }}
+>
+    {%- block content %}{% endblock -%}
+</span>

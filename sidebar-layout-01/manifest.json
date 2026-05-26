@@ -1,0 +1,12 @@
+{
+    "$schema": "../../../schema-kit-recipe-v1.json",
+    "type": "block",
+    "name": "SidebarLayout",
+    "description": "First sidebars are cool, then they're dated, then they're cool again — I think they're cool right now though so we built you this one.",
+    "copy-files": {
+        "templates/": "templates/"
+    },
+    "dependencies": {
+        "recipe": ["button", "fieldset", "heading", "input", "text"]
+    }
+}

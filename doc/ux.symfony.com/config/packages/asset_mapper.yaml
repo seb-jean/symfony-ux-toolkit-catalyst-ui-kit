@@ -1,0 +1,33 @@
+framework:
+    asset_mapper:
+        # The paths to make available to the asset mapper.
+        paths:
+            assets/: ''
+            vendor/symfony/ux-toolkit/kits/: '@symfony/ux-toolkit/kits'
+            # The catalyst kit is symlinked into vendor for local development. The
+            # AssetMapper Finder does not descend into symlinked subdirectories of a
+            # mapped path, so the kit is also registered as its own mapped path (a
+            # symlink used as a path root *is* followed), making its JS assets
+            # resolvable, e.g. dropdown_controller.js.
+            vendor/symfony/ux-toolkit/kits/catalyst/: '@symfony/ux-toolkit/kits/catalyst'
+        excluded_patterns:
+            - '*/assets/styles/_*.css'
+            - '*/assets/styles/_*.scss'
+            - '*/assets/styles/**/_*.css'
+            - '*/assets/styles/**/_*.scss'
+            - '*/assets/icons/**'
+            - '*/assets/react/build**'     # React build dir
+            - '*/assets/react/src**'       # React sources
+            - '*/kits/**/*.html.twig'      # UX Toolkit kit Twig templates
+            - '*/kits/**/*.md'             # UX Toolkit kit documentation
+            - '*/kits/**/manifest.json'    # UX Toolkit kit manifest files
+        importmap_polyfill: false
+        missing_import_mode: strict
+
+when@prod:
+    framework:
+        asset_mapper:
+            missing_import_mode: warn
+
+react:
+    controllers_path: '%kernel.project_dir%/assets/react/dist/controllers'

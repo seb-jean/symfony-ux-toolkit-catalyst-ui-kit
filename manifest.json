@@ -1,0 +1,18 @@
+{
+    "$schema": "../../schema-kit-v1.json",
+    "name": "Catalyst",
+    "description": "Component based on the Catalyst UI kit by Tailwind Plus, a modern application UI kit built with Tailwind CSS.",
+    "license": "MIT",
+    "homepage": "https://ux.symfony.com/toolkit/kits/catalyst",
+    "color": "#19181b",
+    "icon": "icon.svg",
+    "dependencies": {
+        "npm": [
+            "@fontsource/inter"
+        ],
+        "importmap": [
+            "@fontsource/inter/latin.css",
+            "@fontsource/inter/latin-italic.css"
+        ]
+    }
+}

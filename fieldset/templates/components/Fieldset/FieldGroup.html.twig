@@ -1,0 +1,9 @@
+{# @block content The form controls. #}
+<div
+    data-slot="control"
+    {{ attributes.defaults({
+        class: 'space-y-8',
+    }) }}
+>
+    {%- block content %}{% endblock -%}
+</div>

@@ -1,0 +1,8 @@
+{# @block content The emphasized text. #}
+<strong
+    {{ attributes.defaults({
+        class: 'font-medium text-zinc-950 dark:text-white',
+    }) }}
+>
+    {%- block content %}{% endblock -%}
+</strong>

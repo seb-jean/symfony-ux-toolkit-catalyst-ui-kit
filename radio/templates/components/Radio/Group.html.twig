@@ -1,0 +1,18 @@
+{# @prop disabled boolean Whether or not to disable the entire list. #}
+{# @block content The radio fields. #}
+{%- props disabled = false -%}
+{%- do provide('radioGroup.disabled', disabled) -%}
+<div
+    data-slot="control"
+    role="radiogroup"
+    {{ attributes.defaults({
+        class: html_classes(
+            # Basic groups
+            'space-y-3 **:data-[slot=label]:font-normal',
+            # With descriptions
+            'has-data-[slot=description]:space-y-6 has-data-[slot=description]:**:data-[slot=label]:font-medium',
+        )
+    }) }}
+>
+    {%- block content %}{% endblock -%}
+</div>

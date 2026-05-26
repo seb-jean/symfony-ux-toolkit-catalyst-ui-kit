@@ -1,0 +1,8 @@
+{# @block content The body content. #}
+<div
+    {{ attributes.defaults({
+        class: 'mt-6',
+    }) }}
+>
+    {%- block content %}{% endblock -%}
+</div>

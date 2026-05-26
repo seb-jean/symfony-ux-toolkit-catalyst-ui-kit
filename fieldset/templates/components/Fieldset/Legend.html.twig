@@ -1,0 +1,11 @@
+{# @block content The legend text. #}
+{%- set _fieldset_disabled = inject('fieldset.disabled', false) -%}
+<div
+    data-slot="legend"
+    {% if _fieldset_disabled %}data-disabled{% endif %}
+    {{ attributes.defaults({
+        class: 'text-base/6 font-semibold text-zinc-950 data-disabled:opacity-50 sm:text-sm/6 dark:text-white',
+    }) }}
+>
+    {%- block content %}{% endblock -%}
+</div>

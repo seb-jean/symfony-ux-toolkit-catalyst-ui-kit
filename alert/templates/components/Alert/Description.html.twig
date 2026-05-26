@@ -1,0 +1,10 @@
+{# @block content The description text. #}
+{%- set _alert_descriptionId = inject('alert.descriptionId') -%}
+<twig:Text
+    id="{{ _alert_descriptionId }}"
+    {{ ... attributes.defaults({
+        class: 'mt-2 text-center text-pretty sm:text-left',
+    }) }}
+>
+    {{ block(outerBlocks.content) }}
+</twig:Text>

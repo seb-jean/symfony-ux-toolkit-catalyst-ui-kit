@@ -1,0 +1,8 @@
+{# @block content The navbar sections and items. #}
+<nav
+    {{ attributes.defaults({
+        class: 'flex flex-1 items-center gap-4 py-2.5',
+    }) }}
+>
+    {%- block content %}{% endblock -%}
+</nav>

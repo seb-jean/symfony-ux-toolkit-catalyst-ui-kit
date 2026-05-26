@@ -1,0 +1,11 @@
+{# @block content The label text. #}
+{%- set _fieldsetField_disabled = inject('fieldsetField.disabled', false) -%}
+<label
+    data-slot="label"
+    {% if _fieldsetField_disabled %}data-disabled{% endif %}
+    {{ attributes.defaults({
+        class: 'text-base/6 text-zinc-950 select-none data-disabled:opacity-50 sm:text-sm/6 dark:text-white',
+    }) }}
+>
+    {%- block content %}{% endblock -%}
+</label>

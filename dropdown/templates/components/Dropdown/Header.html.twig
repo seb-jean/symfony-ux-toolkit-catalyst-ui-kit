@@ -1,0 +1,8 @@
+{# @block content The dropdown header content. #}
+<div
+    {{ attributes.defaults({
+        class: 'col-span-5 px-3.5 pt-2.5 pb-1 sm:px-3',
+    }) }}
+>
+    {%- block content %}{% endblock -%}
+</div>
