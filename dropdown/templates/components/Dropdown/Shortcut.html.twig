@@ -1,0 +1,7 @@
+{# @block content The keyboard shortcut keys #}
+<kbd
+    class="{{ ('ml-auto flex justify-self-end font-sans text-zinc-400 group-focus/item:text-white ' ~ attributes.render('class'))|trim }}"
+    {{ attributes }}
+>
+    {%- block content %}{% endblock -%}
+</kbd>

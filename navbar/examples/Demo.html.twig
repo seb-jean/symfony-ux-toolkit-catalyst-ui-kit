@@ -1,0 +1,64 @@
+<twig:Navbar>
+    <twig:Dropdown>
+        <twig:Dropdown:Button>
+            <twig:Navbar:Item {{ ...dropdown_trigger_attrs }}>
+                <twig:Avatar src="https://catalyst-demo.tailwindui.com/teams/catalyst.svg" />
+                <twig:Navbar:Label>Catalyst</twig:Navbar:Label>
+                <twig:ux:icon name="heroicons:chevron-down-16-solid" data-slot="icon" />
+            </twig:Navbar:Item>
+        </twig:Dropdown:Button>
+        <twig:Dropdown:Menu class="min-w-64" anchor="bottom start">
+            <twig:Dropdown:Item href="/teams/1/settings">
+                <twig:ux:icon name="heroicons:cog-8-tooth-16-solid" data-slot="icon" />
+                <twig:Dropdown:Label>Settings</twig:Dropdown:Label>
+            </twig:Dropdown:Item>
+            <twig:Dropdown:Divider />
+            <twig:Dropdown:Item href="/teams/2">
+                <twig:Avatar slot="icon" initials="WC" class="bg-purple-500 text-white" />
+                <twig:Dropdown:Label>Workcation</twig:Dropdown:Label>
+            </twig:Dropdown:Item>
+            <twig:Dropdown:Divider />
+            <twig:Dropdown:Item href="/teams/create">
+                <twig:ux:icon name="heroicons:plus-16-solid" data-slot="icon" />
+                <twig:Dropdown:Label>New team&hellip;</twig:Dropdown:Label>
+            </twig:Dropdown:Item>
+        </twig:Dropdown:Menu>
+    </twig:Dropdown>
+    <twig:Navbar:Divider class="max-lg:hidden" />
+    <twig:Navbar:Section class="max-lg:hidden">
+        <twig:Navbar:Item href="/" :current="true">Home</twig:Navbar:Item>
+        <twig:Navbar:Item href="/events">Events</twig:Navbar:Item>
+        <twig:Navbar:Item href="/orders">Orders</twig:Navbar:Item>
+    </twig:Navbar:Section>
+    <twig:Navbar:Spacer />
+    <twig:Navbar:Section>
+        <twig:Navbar:Item href="/search" aria-label="Search">
+            <twig:ux:icon name="heroicons:magnifying-glass-20-solid" data-slot="icon" />
+        </twig:Navbar:Item>
+        <twig:Navbar:Item href="/inbox" aria-label="Inbox">
+            <twig:ux:icon name="heroicons:inbox-20-solid" data-slot="icon" />
+        </twig:Navbar:Item>
+        <twig:Dropdown>
+            <twig:Dropdown:Button>
+                <twig:Navbar:Item {{ ...dropdown_trigger_attrs }} aria-label="Account menu">
+                    <twig:Avatar src="https://catalyst-demo.tailwindui.com/users/erica.jpg" square />
+                </twig:Navbar:Item>
+            </twig:Dropdown:Button>
+            <twig:Dropdown:Menu class="min-w-64" anchor="bottom end">
+                <twig:Dropdown:Item href="/my-profile">
+                    <twig:ux:icon name="heroicons:user-16-solid" data-slot="icon" />
+                    <twig:Dropdown:Label>My profile</twig:Dropdown:Label>
+                </twig:Dropdown:Item>
+                <twig:Dropdown:Item href="/settings">
+                    <twig:ux:icon name="heroicons:cog-8-tooth-16-solid" data-slot="icon" />
+                    <twig:Dropdown:Label>Settings</twig:Dropdown:Label>
+                </twig:Dropdown:Item>
+                <twig:Dropdown:Divider />
+                <twig:Dropdown:Item href="/logout">
+                    <twig:ux:icon name="heroicons:arrow-right-start-on-rectangle-16-solid" data-slot="icon" />
+                    <twig:Dropdown:Label>Sign out</twig:Dropdown:Label>
+                </twig:Dropdown:Item>
+            </twig:Dropdown:Menu>
+        </twig:Dropdown>
+    </twig:Navbar:Section>
+</twig:Navbar>

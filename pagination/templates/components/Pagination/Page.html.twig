@@ -1,0 +1,23 @@
+{# @prop href string The URL to the page #}
+{# @prop current boolean Whether or not it is the current page. Defaults to `false` #}
+{# @block content The page number #}
+{%- props href, current = false -%}
+{%- set content -%}{%- block content %}{% endblock -%}{%- endset -%}
+{%- set content = content|trim -%}
+{%- set style = html_cva(
+    base: 'min-w-9 before:absolute before:-inset-px before:rounded-lg',
+    variants: {
+        current: {
+            true: 'before:bg-zinc-950/5 dark:before:bg-white/10',
+        },
+    },
+) -%}
+<twig:Button
+    href="{{ href }}"
+    plain
+    aria-label="Page {{ content }}"
+    aria-current="{{ current ? 'page' : false }}"
+    class="{{ style.apply({current}, attributes.render('class')) }}"
+>
+    <span class="-mx-0.5">{{- content -}}</span>
+</twig:Button>

@@ -1,0 +1,9 @@
+{# @block content The error message text #}
+<p
+    class="{{ ('text-base/6 text-red-600 data-disabled:opacity-50 sm:text-sm/6 dark:text-red-500 ' ~ attributes.render('class'))|trim }}"
+    {{ attributes.defaults({
+        'data-slot': 'error',
+    }) }}
+>
+    {%- block content %}{% endblock -%}
+</p>

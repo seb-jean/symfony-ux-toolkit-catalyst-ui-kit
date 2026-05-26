@@ -1,0 +1,9 @@
+{# @block content The label text #}
+<span
+    class="{{ ('grow truncate ' ~ attributes.render('class'))|trim }}"
+    {{ attributes.defaults({
+        'data-slot': 'label',
+    }) }}
+>
+    {%- block content %}{% endblock -%}
+</span>

@@ -1,0 +1,30 @@
+<twig:Navbar>
+    <a href="/" aria-label="Home">
+        <svg viewBox="0 0 24 24" fill="currentColor" class="size-10 text-zinc-950 sm:size-8 dark:text-white" aria-hidden="true">
+            <path d="M12 2 2 7l10 5 10-5-10-5Zm0 13L2 10v7l10 5 10-5v-7l-10 5Z" />
+        </svg>
+    </a>
+    <twig:Navbar:Spacer />
+    <twig:Dropdown>
+        <twig:Dropdown:Button>
+            <twig:Navbar:Item {{ ...dropdown_trigger_attrs }} aria-label="Account menu">
+                <twig:Avatar src="https://catalyst-demo.tailwindui.com/users/erica.jpg" square />
+            </twig:Navbar:Item>
+        </twig:Dropdown:Button>
+        <twig:Dropdown:Menu class="min-w-64" anchor="bottom end">
+            <twig:Dropdown:Item href="/my-profile">
+                <twig:ux:icon name="heroicons:user-16-solid" data-slot="icon" />
+                <twig:Dropdown:Label>My profile</twig:Dropdown:Label>
+            </twig:Dropdown:Item>
+            <twig:Dropdown:Item href="/settings">
+                <twig:ux:icon name="heroicons:cog-8-tooth-16-solid" data-slot="icon" />
+                <twig:Dropdown:Label>Settings</twig:Dropdown:Label>
+            </twig:Dropdown:Item>
+            <twig:Dropdown:Divider />
+            <twig:Dropdown:Item href="/logout">
+                <twig:ux:icon name="heroicons:arrow-right-start-on-rectangle-16-solid" data-slot="icon" />
+                <twig:Dropdown:Label>Sign out</twig:Dropdown:Label>
+            </twig:Dropdown:Item>
+        </twig:Dropdown:Menu>
+    </twig:Dropdown>
+</twig:Navbar>

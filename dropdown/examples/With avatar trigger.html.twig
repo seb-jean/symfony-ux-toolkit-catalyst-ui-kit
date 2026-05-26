@@ -1,0 +1,19 @@
+<twig:Dropdown>
+    <twig:Dropdown:Button>
+        <button type="button" class="relative cursor-default rounded-full focus:outline-hidden data-focus:outline data-focus:outline-2 data-focus:outline-offset-2 data-focus:outline-blue-500" aria-label="Account options" {{ ...dropdown_trigger_attrs }}>
+            <twig:Avatar src="https://catalyst-demo.tailwindui.com/users/erica.jpg" square class="size-8" />
+        </button>
+    </twig:Dropdown:Button>
+    <twig:Dropdown:Menu anchor="bottom end">
+        <twig:Dropdown:Item href="#">
+            <twig:Dropdown:Label>My profile</twig:Dropdown:Label>
+        </twig:Dropdown:Item>
+        <twig:Dropdown:Item href="#">
+            <twig:Dropdown:Label>Settings</twig:Dropdown:Label>
+        </twig:Dropdown:Item>
+        <twig:Dropdown:Divider />
+        <twig:Dropdown:Item href="#">
+            <twig:Dropdown:Label>Sign out</twig:Dropdown:Label>
+        </twig:Dropdown:Item>
+    </twig:Dropdown:Menu>
+</twig:Dropdown>

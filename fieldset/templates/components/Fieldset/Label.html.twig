@@ -1,0 +1,9 @@
+{# @block content The label text #}
+<label
+    class="{{ ('text-base/6 text-zinc-950 select-none data-disabled:opacity-50 sm:text-sm/6 dark:text-white ' ~ attributes.render('class'))|trim }}"
+    {{ attributes.defaults({
+        'data-slot': 'label',
+    }) }}
+>
+    {%- block content %}{% endblock -%}
+</label>

@@ -1,0 +1,18 @@
+<twig:Dropdown>
+    <twig:Dropdown:Button>
+        <twig:Button plain aria-label="More options" {{ ...dropdown_trigger_attrs }}>
+            <twig:ux:icon name="heroicons:ellipsis-horizontal-16-solid" data-slot="icon" />
+        </twig:Button>
+    </twig:Dropdown:Button>
+    <twig:Dropdown:Menu anchor="bottom start">
+        <twig:Dropdown:Item href="#">
+            <twig:Dropdown:Label>View</twig:Dropdown:Label>
+        </twig:Dropdown:Item>
+        <twig:Dropdown:Item href="#">
+            <twig:Dropdown:Label>Edit</twig:Dropdown:Label>
+        </twig:Dropdown:Item>
+        <twig:Dropdown:Item href="#">
+            <twig:Dropdown:Label>Delete</twig:Dropdown:Label>
+        </twig:Dropdown:Item>
+    </twig:Dropdown:Menu>
+</twig:Dropdown>

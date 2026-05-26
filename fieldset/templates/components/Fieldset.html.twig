@@ -1,0 +1,7 @@
+{# @block content The fieldset content, typically includes `Legend`, `Text`, and `Fieldset:FieldGroup` #}
+<fieldset
+    class="{{ ('*:data-[slot=text]:mt-1 [&>*+[data-slot=control]]:mt-6 ' ~ attributes.render('class'))|trim }}"
+    {{ attributes }}
+>
+    {%- block content %}{% endblock -%}
+</fieldset>

@@ -1,0 +1,22 @@
+<twig:Dropdown>
+    <twig:Dropdown:Button>
+        <twig:Button outline {{ ...dropdown_trigger_attrs }}>
+            Permissions
+            <twig:ux:icon name="heroicons:chevron-down-16-solid" data-slot="icon" />
+        </twig:Button>
+    </twig:Dropdown:Button>
+    <twig:Dropdown:Menu anchor="bottom start" class="min-w-72">
+        <twig:Dropdown:Item href="#">
+            <span class="flex flex-col">
+                <twig:Dropdown:Label>Editor</twig:Dropdown:Label>
+                <twig:Dropdown:Description>Can edit and share documents.</twig:Dropdown:Description>
+            </span>
+        </twig:Dropdown:Item>
+        <twig:Dropdown:Item href="#">
+            <span class="flex flex-col">
+                <twig:Dropdown:Label>Viewer</twig:Dropdown:Label>
+                <twig:Dropdown:Description>Can view documents but not edit them.</twig:Dropdown:Description>
+            </span>
+        </twig:Dropdown:Item>
+    </twig:Dropdown:Menu>
+</twig:Dropdown>

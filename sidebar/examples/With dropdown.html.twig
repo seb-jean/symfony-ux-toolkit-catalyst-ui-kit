@@ -1,0 +1,64 @@
+<div class="h-120 w-full">
+    <div class="-mx-5">
+        <div class="h-full w-64 border-r border-zinc-950/5 bg-zinc-100 dark:bg-zinc-950">
+            <twig:Sidebar>
+                <twig:Sidebar:Header>
+                    <twig:Dropdown>
+                        <twig:Dropdown:Button>
+                            <twig:Sidebar:Item {{ ...dropdown_trigger_attrs }}>
+                                <twig:Avatar src="https://catalyst.tailwindui.com/tailwind-logo.svg" />
+                                <twig:Sidebar:Label>Tailwind Labs</twig:Sidebar:Label>
+                                <twig:ux:icon name="heroicons:chevron-down-16-solid" />
+                            </twig:Sidebar:Item>
+                        </twig:Dropdown:Button>
+                        <twig:Dropdown:Menu class="min-w-64" anchor="bottom start">
+                            <twig:Dropdown:Item href="/teams/1/settings">
+                                <twig:ux:icon name="heroicons:cog-8-tooth-16-solid" />
+                                <twig:Dropdown:Label>Settings</twig:Dropdown:Label>
+                            </twig:Dropdown:Item>
+                            <twig:Dropdown:Divider />
+                            <twig:Dropdown:Item href="/teams/1">
+                                <twig:Avatar slot="icon" src="https://catalyst.tailwindui.com/tailwind-logo.svg" />
+                                <twig:Dropdown:Label>Tailwind Labs</twig:Dropdown:Label>
+                            </twig:Dropdown:Item>
+                            <twig:Dropdown:Item href="/teams/2">
+                                <twig:Avatar slot="icon" initials="WC" class="bg-purple-500 text-white" />
+                                <twig:Dropdown:Label>Workcation</twig:Dropdown:Label>
+                            </twig:Dropdown:Item>
+                            <twig:Dropdown:Divider />
+                            <twig:Dropdown:Item href="/teams/create">
+                                <twig:ux:icon name="heroicons:plus-16-solid" />
+                                <twig:Dropdown:Label>New team&hellip;</twig:Dropdown:Label>
+                            </twig:Dropdown:Item>
+                        </twig:Dropdown:Menu>
+                    </twig:Dropdown>
+                </twig:Sidebar:Header>
+                <twig:Sidebar:Body>
+                    <twig:Sidebar:Section>
+                        <twig:Sidebar:Item href="/">
+                            <twig:ux:icon name="heroicons:home-20-solid" />
+                            <twig:Sidebar:Label>Home</twig:Sidebar:Label>
+                        </twig:Sidebar:Item>
+                        <twig:Sidebar:Item href="/events">
+                            <twig:ux:icon name="heroicons:square-2-stack-20-solid" />
+                            <twig:Sidebar:Label>Events</twig:Sidebar:Label>
+                        </twig:Sidebar:Item>
+                        <twig:Sidebar:Item href="/orders">
+                            <twig:ux:icon name="heroicons:ticket-20-solid" />
+                            <twig:Sidebar:Label>Orders</twig:Sidebar:Label>
+                        </twig:Sidebar:Item>
+                        <twig:Sidebar:Item href="/broadcasts">
+                            <twig:ux:icon name="heroicons:megaphone-20-solid" />
+                            <twig:Sidebar:Label>Broadcasts</twig:Sidebar:Label>
+                        </twig:Sidebar:Item>
+                        <twig:Sidebar:Item href="/settings">
+                            <twig:ux:icon name="heroicons:cog-6-tooth-20-solid" />
+                            <twig:Sidebar:Label>Settings</twig:Sidebar:Label>
+                        </twig:Sidebar:Item>
+                    </twig:Sidebar:Section>
+                </twig:Sidebar:Body>
+            </twig:Sidebar>
+        </div>
+    </div>
+</div>
+

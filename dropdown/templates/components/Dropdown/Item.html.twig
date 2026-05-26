@@ -1,0 +1,15 @@
+{# @prop href string|null URL to link to. Renders as `<a>` when set, otherwise a `<button>`. Defaults to `null` #}
+{# @block content The item content, typically an icon and a `Dropdown:Label` #}
+{%- props href = null -%}
+{%- set element = href ? 'a' : 'button' -%}
+
+{%- set _classes = 'group/item flex w-full cursor-default items-center gap-2.5 rounded-lg px-3.5 py-2.5 text-left text-base/6 text-zinc-950 focus:outline-hidden sm:px-3 sm:py-1.5 sm:text-sm/6 dark:text-white forced-colors:text-[CanvasText] focus:bg-blue-500 focus:text-white disabled:opacity-50 *:data-[slot=icon]:size-5 *:data-[slot=icon]:shrink-0 sm:*:data-[slot=icon]:size-4 *:data-[slot=icon]:text-zinc-500 focus:*:data-[slot=icon]:text-white dark:*:data-[slot=icon]:text-zinc-400 *:data-[slot=avatar]:size-6 *:data-[slot=avatar]:shrink-0 sm:*:data-[slot=avatar]:size-5' -%}
+
+<{{ element }}
+    role="menuitem"
+    tabindex="-1"
+    class="{{ (_classes ~ ' ' ~ attributes.render('class'))|trim }}"
+    {{ attributes.defaults(href ? {href: href} : {type: 'button'}) }}
+>
+    {%- block content %}{% endblock -%}
+</{{ element }}>

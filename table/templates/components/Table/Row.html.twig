@@ -1,0 +1,35 @@
+{# @prop href string|null The URL for the row when used as a link. Defaults to `null` #}
+{# @prop target string|null The target for the row when used as a link. Defaults to `null` #}
+{# @prop title string|null The title for the row when used as a link. Defaults to `null` #}
+{# @block content The table cells #}
+{%- props href = null, target = null, title = null -%}
+{%- do provide('tableRow.href', href) -%}
+{%- do provide('tableRow.target', target) -%}
+{%- do provide('tableRow.title', title) -%}
+{%- set _table_striped = inject('table.striped', false) -%}
+{%- set style = html_cva(
+    variants: {
+        href: {
+            true: 'has-[[data-row-link]:focus-visible]:outline-2 has-[[data-row-link]:focus-visible]:-outline-offset-2 has-[[data-row-link]:focus-visible]:outline-blue-500 dark:focus-within:bg-white/2.5',
+        },
+        striped: {
+            true: 'even:bg-zinc-950/2.5 dark:even:bg-white/2.5',
+        },
+    },
+    compoundVariants: [{
+            href: true,
+            striped: true,
+            class: 'hover:bg-zinc-950/5 dark:hover:bg-white/5'
+        },
+        {
+            href: true,
+            striped: false,
+            class: 'hover:bg-zinc-950/2.5 dark:hover:bg-white/2.5',
+        }],
+) -%}
+<tr
+    class="{{ style.apply({href: href is not null, striped: _table_striped}, attributes.render('class')) }}"
+    {{ attributes }}
+>
+    {%- block content %}{% endblock -%}
+</tr>

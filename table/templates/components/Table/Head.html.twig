@@ -1,0 +1,7 @@
+{# @block content The table header rows #}
+<thead
+    class="{{ ('text-zinc-500 dark:text-zinc-400 ' ~ attributes.render('class'))|trim }}"
+    {{ attributes }}
+>
+    {%- block content %}{% endblock -%}
+</thead>

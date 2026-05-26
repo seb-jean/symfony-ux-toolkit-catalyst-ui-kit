@@ -1,0 +1,50 @@
+{# @prop current boolean Whether or not it is the current navigation item. Defaults to `false` #}
+{# @prop href string|null The target URL when using the button as a link. Defaults to `null` #}
+{# @block content The item label and/or icon #}
+{%- props href = null, current = false -%}
+{%- set element = href ? 'a' : 'button' -%}
+{%- set style = html_cva(
+    base: [
+        # Base
+        'flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium text-zinc-950 sm:py-2 sm:text-sm/5',
+        # Leading icon/icon-only
+        '*:data-[slot=icon]:size-6 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:text-zinc-500 sm:*:data-[slot=icon]:size-5',
+        # Trailing icon (down chevron or similar)
+        '*:last:data-[slot=icon]:ml-auto *:last:data-[slot=icon]:size-5 sm:*:last:data-[slot=icon]:size-4',
+        # Avatar
+        '*:data-[slot=avatar]:-m-0.5 *:data-[slot=avatar]:size-7 sm:*:data-[slot=avatar]:size-6',
+        # Hover
+        'hover:bg-zinc-950/5 hover:*:data-[slot=icon]:text-zinc-950',
+        # Active
+        'active:bg-zinc-950/5 active:*:data-[slot=icon]:text-zinc-950',
+        # Current
+        'data-current:*:data-[slot=icon]:text-zinc-950',
+        # Dark mode
+        'dark:text-white dark:*:data-[slot=icon]:text-zinc-400',
+        'dark:hover:bg-white/5 dark:hover:*:data-[slot=icon]:text-white',
+        'dark:active:bg-white/5 dark:active:*:data-[slot=icon]:text-white',
+        'dark:data-current:*:data-[slot=icon]:text-white',
+    ],
+    variants: {
+        href: {
+            false: 'cursor-default',
+        },
+    },
+) -%}
+<span class="{{ ('relative ' ~ attributes.render('class'))|trim }}">
+    {%- if current -%}
+        <span class="absolute inset-y-2 -left-4 w-0.5 rounded-full bg-zinc-950 dark:bg-white"></span>
+    {%- endif -%}
+    <{{ element }}
+        {% if current %}data-current="true"{% endif %}
+        {% if href is not empty %}href="{{ href }}"{% endif %}
+        class="{{ style.apply({href: href is not empty}) }}"
+        {{ attributes.defaults({
+            type: href is empty ? 'button' : false,
+        }) }}
+    >
+        <twig:Button:TouchTarget>
+            {{ block(outerBlocks.content) }}
+        </twig:Button:TouchTarget>
+    </{{ element }}>
+</span>

@@ -1,0 +1,11 @@
+<twig:Fieldset:Field>
+    <twig:Fieldset:Label>Project status</twig:Fieldset:Label>
+    <twig:Select name="status" :invalid="true">
+        <option value="" disabled selected>Select a status...</option>
+        <option value="active">Active</option>
+        <option value="paused">Paused</option>
+        <option value="delayed">Delayed</option>
+        <option value="canceled">Canceled</option>
+    </twig:Select>
+    <twig:Fieldset:ErrorMessage>Please select a status.</twig:Fieldset:ErrorMessage>
+</twig:Fieldset:Field>

@@ -1,0 +1,15 @@
+{
+    "$schema": "../../../schema-kit-recipe-v1.json",
+    "type": "component",
+    "name": "Alert",
+    "description": "You'll still get emails from people who accidentally deleted their account, but at least you tried.",
+    "copy-files": {
+        "templates/": "templates/"
+    },
+    "dependencies": {
+        "composer": ["twig/extra-bundle", "twig/html-extra:^3.12.0"],
+        "npm": ["@tailwindplus/elements"],
+        "importmap": ["@tailwindplus/elements"],
+        "recipe": ["button"]
+    }
+}

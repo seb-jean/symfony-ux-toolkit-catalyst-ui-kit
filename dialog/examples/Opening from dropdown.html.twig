@@ -1,0 +1,32 @@
+<twig:Dialog>
+    <twig:block name="trigger">
+        <twig:Dropdown>
+            <twig:Dropdown:Button>
+                <twig:Button outline {{ ...dropdown_trigger_attrs }}>
+                    Options
+                    <twig:ux:icon name="heroicons:chevron-down-16-solid" data-slot="icon" />
+                </twig:Button>
+            </twig:Dropdown:Button>
+            <twig:Dropdown:Menu anchor="bottom start">
+                <twig:Dropdown:Item {{ ...dialog_trigger_attrs }}>
+                    <twig:Dropdown:Label>Refund</twig:Dropdown:Label>
+                </twig:Dropdown:Item>
+                <twig:Dropdown:Item href="#" disabled>
+                    <twig:Dropdown:Label>Download</twig:Dropdown:Label>
+                </twig:Dropdown:Item>
+            </twig:Dropdown:Menu>
+        </twig:Dropdown>
+    </twig:block>
+    <twig:Dialog:Title>Refund payment</twig:Dialog:Title>
+    <twig:Dialog:Description>The refund will be reflected in the customer's bank account 2 to 3 business days after processing.</twig:Dialog:Description>
+    <twig:Dialog:Body>
+        <twig:Fieldset:Field>
+            <twig:Fieldset:Label>Amount</twig:Fieldset:Label>
+            <twig:Input name="amount" placeholder="$0.00" />
+        </twig:Fieldset:Field>
+    </twig:Dialog:Body>
+    <twig:Dialog:Actions>
+        <twig:Button plain {{ ...dialog_close_attrs }}>Cancel</twig:Button>
+        <twig:Button {{ ...dialog_close_attrs }}>Refund</twig:Button>
+    </twig:Dialog:Actions>
+</twig:Dialog>

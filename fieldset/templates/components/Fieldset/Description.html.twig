@@ -1,0 +1,9 @@
+{# @block content The description text #}
+<p
+    class="{{ ('text-base/6 text-zinc-500 data-disabled:opacity-50 sm:text-sm/6 dark:text-zinc-400 ' ~ attributes.render('class'))|trim }}"
+    {{ attributes.defaults({
+        'data-slot': 'description',
+    }) }}
+>
+    {%- block content %}{% endblock -%}
+</p>

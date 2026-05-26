@@ -1,0 +1,7 @@
+{# @block content The field content, typically includes `Fieldset:Label`, a form control, and optionally `Fieldset:Description` or `Fieldset:ErrorMessage` #}
+<div
+    class="{{ ('[&>[data-slot=label]+[data-slot=control]]:mt-3 [&>[data-slot=label]+[data-slot=description]]:mt-1 [&>[data-slot=description]+[data-slot=control]]:mt-3 [&>[data-slot=control]+[data-slot=description]]:mt-3 [&>[data-slot=control]+[data-slot=error]]:mt-3 *:data-[slot=label]:font-medium ' ~ attributes.render('class'))|trim }}"
+    {{ attributes }}
+>
+    {%- block content %}{% endblock -%}
+</div>

@@ -1,0 +1,7 @@
+{# @block content The heading text #}
+<h3
+    class="{{ ('mb-1 px-2 text-xs/6 font-medium text-zinc-500 dark:text-zinc-400 ' ~ attributes.render('class'))|trim }}"
+    {{ attributes }}
+>
+    {%- block content %}{% endblock -%}
+</h3>

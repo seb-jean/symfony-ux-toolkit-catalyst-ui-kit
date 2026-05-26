@@ -1,0 +1,7 @@
+{# @block content The description text #}
+<span
+    class="{{ ('flex flex-1 overflow-hidden text-zinc-500 group-focus/option:text-white before:w-2 before:min-w-0 before:shrink dark:text-zinc-400 ' ~ attributes.render('class'))|trim }}"
+    {{ attributes }}
+>
+    <span class="flex-1 truncate">{%- block content %}{% endblock -%}</span>
+</span>

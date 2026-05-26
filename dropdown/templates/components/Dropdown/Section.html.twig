@@ -1,0 +1,8 @@
+{# @block content The section items, optionally preceded by a `Dropdown:Heading` #}
+<div
+    role="group"
+    class="{{ attributes.render('class') }}"
+    {{ attributes }}
+>
+    {%- block content %}{% endblock -%}
+</div>

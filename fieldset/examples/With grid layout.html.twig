@@ -1,0 +1,39 @@
+<twig:Fieldset>
+    <twig:Fieldset:Legend>Shipping details</twig:Fieldset:Legend>
+    <twig:Text>Without this your odds of getting your order are low.</twig:Text>
+    <twig:Fieldset:FieldGroup>
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-4">
+            <twig:Fieldset:Field>
+                <twig:Fieldset:Label>First name</twig:Fieldset:Label>
+                <twig:Input name="first_name" />
+            </twig:Fieldset:Field>
+            <twig:Fieldset:Field>
+                <twig:Fieldset:Label>Last name</twig:Fieldset:Label>
+                <twig:Input name="last_name" />
+            </twig:Fieldset:Field>
+        </div>
+        <twig:Fieldset:Field>
+            <twig:Fieldset:Label>Street address</twig:Fieldset:Label>
+            <twig:Input name="street_address" />
+        </twig:Fieldset:Field>
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-4">
+            <twig:Fieldset:Field class="sm:col-span-2">
+                <twig:Fieldset:Label>Country</twig:Fieldset:Label>
+                <twig:Select name="country">
+                    <option>Canada</option>
+                    <option>Mexico</option>
+                    <option>United States</option>
+                </twig:Select>
+            </twig:Fieldset:Field>
+            <twig:Fieldset:Field>
+                <twig:Fieldset:Label>Postal code</twig:Fieldset:Label>
+                <twig:Input name="postal_code" />
+            </twig:Fieldset:Field>
+        </div>
+        <twig:Fieldset:Field>
+            <twig:Fieldset:Label>Delivery notes</twig:Fieldset:Label>
+            <twig:Textarea name="notes" />
+            <twig:Fieldset:Description>If you have a tiger, we'd like to know about it.</twig:Fieldset:Description>
+        </twig:Fieldset:Field>
+    </twig:Fieldset:FieldGroup>
+</twig:Fieldset>

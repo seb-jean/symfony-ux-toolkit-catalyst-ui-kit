@@ -1,0 +1,16 @@
+<twig:Navbar>
+    <twig:Navbar:Section>
+        <twig:Navbar:Item href="/" :current="true">Home</twig:Navbar:Item>
+        <twig:Navbar:Item href="/events">Events</twig:Navbar:Item>
+        <twig:Navbar:Item href="/orders">Orders</twig:Navbar:Item>
+    </twig:Navbar:Section>
+    <twig:Navbar:Spacer />
+    <twig:Navbar:Section>
+        <twig:Navbar:Item href="/search" aria-label="Search">
+            <twig:ux:icon name="heroicons:magnifying-glass-20-solid" data-slot="icon" />
+        </twig:Navbar:Item>
+        <twig:Navbar:Item href="/inbox" aria-label="Inbox">
+            <twig:ux:icon name="heroicons:inbox-20-solid" data-slot="icon" />
+        </twig:Navbar:Item>
+    </twig:Navbar:Section>
+</twig:Navbar>

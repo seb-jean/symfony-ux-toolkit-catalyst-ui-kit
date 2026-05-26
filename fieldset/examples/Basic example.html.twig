@@ -1,0 +1,22 @@
+<twig:Fieldset>
+    <twig:Fieldset:Legend>Shipping details</twig:Fieldset:Legend>
+    <twig:Text>Provide the shipping details for your order.</twig:Text>
+    <twig:Fieldset:FieldGroup>
+        <twig:Fieldset:Field>
+            <twig:Fieldset:Label>Street address</twig:Fieldset:Label>
+            <twig:Input name="street_address" />
+        </twig:Fieldset:Field>
+        <twig:Fieldset:Field>
+            <twig:Fieldset:Label>Country</twig:Fieldset:Label>
+            <twig:Select name="country">
+                <option>Canada</option>
+                <option>Mexico</option>
+                <option>United States</option>
+            </twig:Select>
+        </twig:Fieldset:Field>
+        <twig:Fieldset:Field>
+            <twig:Fieldset:Label>Delivery notes</twig:Fieldset:Label>
+            <twig:Textarea name="notes" />
+        </twig:Fieldset:Field>
+    </twig:Fieldset:FieldGroup>
+</twig:Fieldset>

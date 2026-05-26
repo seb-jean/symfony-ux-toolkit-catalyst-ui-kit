@@ -1,0 +1,32 @@
+{# @prop anchor 'bottom'|'bottom start'|'bottom end'|'top'|'top start'|'top end' Where the menu is anchored to the trigger. Defaults to `'bottom'` #}
+{# @block content The menu items, typically `Dropdown:Item`, `Dropdown:Section`, `Dropdown:Divider`, etc. #}
+{%- props anchor = 'bottom' -%}
+
+{%- set _anchors = {
+    'bottom': 'bottom',
+    'bottom start': 'bottom-start',
+    'bottom end': 'bottom-end',
+    'top': 'top',
+    'top start': 'top-start',
+    'top end': 'top-end',
+} -%}
+
+{%- set _origins = {
+    'bottom': 'origin-top',
+    'bottom start': 'origin-top-left',
+    'bottom end': 'origin-top-right',
+    'top': 'origin-bottom',
+    'top start': 'origin-bottom-left',
+    'top end': 'origin-bottom-right',
+} -%}
+
+<el-menu
+    popover
+    anchor="{{ _anchors[anchor]|default('bottom') }}"
+    role="menu"
+    style="--anchor-gap: 0.5rem"
+    class="{{ ((_origins[anchor]|default('origin-top')) ~ ' z-10 isolate w-max min-w-48 rounded-xl p-1 outline outline-transparent focus:outline-hidden overflow-y-auto bg-white/75 backdrop-blur-xl dark:bg-zinc-800/75 shadow-lg ring-1 ring-zinc-950/10 dark:ring-white/10 dark:ring-inset transition duration-100 ease-out data-[closed]:invisible data-[closed]:scale-95 data-[closed]:opacity-0 ' ~ attributes.render('class'))|trim }}"
+    {{ attributes }}
+>
+    {%- block content %}{% endblock -%}
+</el-menu>

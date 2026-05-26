@@ -1,0 +1,6 @@
+{# @block content The trigger element (e.g. a `Button`, `Navbar:Item` or `Sidebar:Item`) onto which `dropdown_trigger_attrs` is spread #}
+{%- set dropdown_trigger_attrs = {
+    type: 'button',
+    'aria-haspopup': 'menu',
+} -%}
+{%- block content %}{% endblock -%}

@@ -1,0 +1,26 @@
+<twig:Dropdown>
+    <twig:Dropdown:Button>
+        <twig:Button outline {{ ...dropdown_trigger_attrs }}>
+            Options
+            <twig:ux:icon name="heroicons:chevron-down-16-solid" data-slot="icon" />
+        </twig:Button>
+    </twig:Dropdown:Button>
+    <twig:Dropdown:Menu anchor="bottom start">
+        <twig:Dropdown:Header>
+            <div class="pr-6">
+                <div class="text-xs text-zinc-500 dark:text-zinc-400">Signed in as Tom Cook</div>
+                <div class="text-sm/7 font-semibold text-zinc-800 dark:text-white">tom@example.com</div>
+            </div>
+        </twig:Dropdown:Header>
+        <twig:Dropdown:Divider />
+        <twig:Dropdown:Item href="#">
+            <twig:Dropdown:Label>My profile</twig:Dropdown:Label>
+        </twig:Dropdown:Item>
+        <twig:Dropdown:Item href="#">
+            <twig:Dropdown:Label>Notifications</twig:Dropdown:Label>
+        </twig:Dropdown:Item>
+        <twig:Dropdown:Item href="#">
+            <twig:Dropdown:Label>Settings</twig:Dropdown:Label>
+        </twig:Dropdown:Item>
+    </twig:Dropdown:Menu>
+</twig:Dropdown>

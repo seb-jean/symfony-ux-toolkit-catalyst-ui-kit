@@ -1,0 +1,23 @@
+<twig:Dropdown>
+    <twig:Dropdown:Button>
+        <twig:Button outline {{ ...dropdown_trigger_attrs }}>
+            Options
+            <twig:ux:icon name="heroicons:chevron-down-16-solid" data-slot="icon" />
+        </twig:Button>
+    </twig:Dropdown:Button>
+    <twig:Dropdown:Menu anchor="bottom start">
+        <twig:Dropdown:Item href="#">
+            <twig:Dropdown:Label>Edit</twig:Dropdown:Label>
+            <twig:Dropdown:Shortcut>⌘E</twig:Dropdown:Shortcut>
+        </twig:Dropdown:Item>
+        <twig:Dropdown:Item href="#">
+            <twig:Dropdown:Label>Duplicate</twig:Dropdown:Label>
+            <twig:Dropdown:Shortcut>⌘D</twig:Dropdown:Shortcut>
+        </twig:Dropdown:Item>
+        <twig:Dropdown:Divider />
+        <twig:Dropdown:Item href="#">
+            <twig:Dropdown:Label>Delete</twig:Dropdown:Label>
+            <twig:Dropdown:Shortcut>⌘⌫</twig:Dropdown:Shortcut>
+        </twig:Dropdown:Item>
+    </twig:Dropdown:Menu>
+</twig:Dropdown>

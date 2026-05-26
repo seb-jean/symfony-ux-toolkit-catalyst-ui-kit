@@ -1,0 +1,19 @@
+<twig:Dropdown>
+    <twig:Dropdown:Button>
+        <twig:Button outline {{ ...dropdown_trigger_attrs }}>
+            Options
+            <twig:ux:icon name="heroicons:chevron-down-16-solid" data-slot="icon" />
+        </twig:Button>
+    </twig:Dropdown:Button>
+    <twig:Dropdown:Menu anchor="bottom start" class="min-w-48">
+        <twig:Dropdown:Item href="#">
+            <twig:Dropdown:Label>Account</twig:Dropdown:Label>
+        </twig:Dropdown:Item>
+        <twig:Dropdown:Item href="#">
+            <twig:Dropdown:Label>Notifications</twig:Dropdown:Label>
+        </twig:Dropdown:Item>
+        <twig:Dropdown:Item href="#">
+            <twig:Dropdown:Label>Billing</twig:Dropdown:Label>
+        </twig:Dropdown:Item>
+    </twig:Dropdown:Menu>
+</twig:Dropdown>
