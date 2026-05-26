@@ -1,0 +1,20 @@
+{# @prop color string The color of the badge. #}
+{# @prop href string|null The target URL when using the button as a link. #}
+{# @block content The badge label. #}
+{%- props color = 'zinc', href = null -%}
+{%- set element = href is not empty ? 'a' : 'button' -%}
+<{{ element }}
+    {% if href is not empty %}href="{{ href }}"{% endif %}
+    class="{{ ('group relative inline-flex rounded-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 ' ~ attributes.render('class'))|trim }}"
+    {{ attributes.defaults({
+        type: href is empty ? 'button' : false,
+    }) }}
+>
+    <twig:Button:TouchTarget>
+        {% with {content: outerBlocks.content} %}
+            <twig:Badge :color="color">
+                {{ block(content) }}
+            </twig:Badge>
+        {% endwith %}
+    </twig:Button:TouchTarget>
+</{{ element }}>

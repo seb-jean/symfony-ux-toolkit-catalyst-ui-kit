@@ -1,0 +1,7 @@
+{# @block content The label text. #}
+<span
+    class="{{ ('truncate ' ~ attributes.render('class'))|trim }}"
+    {{ attributes }}
+>
+    {%- block content %}{% endblock -%}
+</span>

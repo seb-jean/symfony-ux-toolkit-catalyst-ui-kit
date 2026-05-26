@@ -1,0 +1,25 @@
+{
+    "$schema": "../../../schema-kit-recipe-v1.json",
+    "type": "component",
+    "name": "Dialog",
+    "description": "Back in my day we used to just put this sort of content on a separate page.",
+    "copy-files": {
+        "templates/": "templates/"
+    },
+    "dependencies": {
+        "composer": [
+            "symfony/ux-twig-component:^3.1",
+            "twig/extra-bundle",
+            "twig/html-extra:^3.12.0"
+        ],
+        "importmap": [
+            "@tailwindplus/elements"
+        ],
+        "npm": [
+            "@tailwindplus/elements"
+        ],
+        "recipe": [
+            "button"
+        ]
+    }
+}

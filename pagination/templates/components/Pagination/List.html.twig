@@ -1,0 +1,7 @@
+{# @block content The page links and gaps. #}
+<span
+    class="{{ ('hidden items-baseline gap-x-2 sm:flex ' ~ attributes.render('class'))|trim }}"
+    {{ attributes }}
+>
+    {%- block content %}{% endblock -%}
+</span>

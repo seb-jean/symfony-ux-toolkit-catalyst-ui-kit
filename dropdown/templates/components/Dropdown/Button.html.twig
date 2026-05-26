@@ -1,0 +1,6 @@
+{# @prop as string The component to render as. #}
+{# @block content The dropdown button. #}
+{%- props as = 'Button' -%}
+<twig:component :is="as" {{ ...attributes }}>
+    {{ block(outerBlocks.content) }}
+</twig:component>

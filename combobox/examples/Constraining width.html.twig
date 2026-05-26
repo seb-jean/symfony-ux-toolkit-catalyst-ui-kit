@@ -1,0 +1,18 @@
+{%- set currencies = [
+    {code: 'CAD'},
+    {code: 'USD'},
+    {code: 'EUR'},
+    {code: 'GBP'},
+] -%}
+<div class="w-full max-w-40">
+    <twig:Fieldset:Field>
+        <twig:Fieldset:Label>Currency</twig:Fieldset:Label>
+        <twig:Combobox class="max-w-40" name="currency" defaultValue="CAD">
+            {%- for currency in currencies -%}
+                <twig:Combobox:Option value="{{ currency.code }}">
+                    <twig:Combobox:Label>{{ currency.code }}</twig:Combobox:Label>
+                </twig:Combobox:Option>
+            {%- endfor -%}
+        </twig:Combobox>
+    </twig:Fieldset:Field>
+</div>

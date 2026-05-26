@@ -1,0 +1,20 @@
+{%- set users = [
+    {name: 'Leslie Alexander'},
+    {name: 'Michael Foster'},
+    {name: 'Dries Vincent'},
+    {name: 'Bonnie Green'},
+    {name: 'Courtney Henry'},
+] -%}
+<div class="w-full max-w-xs">
+    <twig:Fieldset:Field>
+        <twig:Fieldset:Label>Assigned to</twig:Fieldset:Label>
+        <twig:Fieldset:Description>This user will have full access to the project.</twig:Fieldset:Description>
+        <twig:Combobox name="user" defaultValue="Tom Cook">
+            {%- for user in users -%}
+                <twig:Combobox:Option value="{{ user.name }}">
+                    <twig:Combobox:Label>{{ user.name }}</twig:Combobox:Label>
+                </twig:Combobox:Option>
+            {%- endfor -%}
+        </twig:Combobox>
+    </twig:Fieldset:Field>
+</div>

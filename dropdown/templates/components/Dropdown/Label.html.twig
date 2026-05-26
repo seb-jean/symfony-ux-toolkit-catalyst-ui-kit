@@ -1,0 +1,8 @@
+{# @block content The label text. #}
+<div
+    data-slot="label"
+    class="{{ ('col-start-2 row-start-1 ' ~ attributes.render('class'))|trim }}"
+    {{ attributes }}
+>
+    {%- block content %}{% endblock -%}
+</div>

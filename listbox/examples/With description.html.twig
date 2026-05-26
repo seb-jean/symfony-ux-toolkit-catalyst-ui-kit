@@ -1,0 +1,20 @@
+<div class="w-full max-w-xs">
+    <twig:Fieldset:Field>
+        <twig:Fieldset:Label>Project status</twig:Fieldset:Label>
+        <twig:Fieldset:Description>This will be visible to clients on the project.</twig:Fieldset:Description>
+        <twig:Listbox name="status" defaultValue="active">
+            <twig:Listbox:Option value="active">
+                <twig:Listbox:Label>Active</twig:Listbox:Label>
+            </twig:Listbox:Option>
+            <twig:Listbox:Option value="paused">
+                <twig:Listbox:Label>Paused</twig:Listbox:Label>
+            </twig:Listbox:Option>
+            <twig:Listbox:Option value="delayed">
+                <twig:Listbox:Label>Delayed</twig:Listbox:Label>
+            </twig:Listbox:Option>
+            <twig:Listbox:Option value="canceled">
+                <twig:Listbox:Label>Canceled</twig:Listbox:Label>
+            </twig:Listbox:Option>
+        </twig:Listbox>
+    </twig:Fieldset:Field>
+</div>

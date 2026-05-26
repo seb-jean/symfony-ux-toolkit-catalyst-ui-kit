@@ -1,0 +1,15 @@
+{# @prop keys string|string[] The keyboard shortcut. #}
+{%- props keys -%}
+<kbd
+    class="{{ ('col-start-5 row-start-1 flex justify-self-end ' ~ attributes.render('class'))|trim }}"
+    {{ attributes }}
+>
+    {%- for char in (keys is iterable ? keys : keys|split('')) -%}
+        <kbd class="{{ html_classes(
+            'min-w-[2ch] text-center font-sans text-zinc-400 capitalize group-focus:text-white dark:group-focus:text-white forced-colors:group-focus:text-[HighlightText]',
+            { 'pl-1': not loop.first and char|length > 1 }
+        ) }}">
+            {{- char -}}
+        </kbd>
+    {%- endfor -%}
+</kbd>

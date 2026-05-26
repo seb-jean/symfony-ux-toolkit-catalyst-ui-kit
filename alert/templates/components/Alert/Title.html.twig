@@ -1,0 +1,9 @@
+{# @block content The title text. #}
+{%- set _alert_titleId = inject('alert.titleId') -%}
+<h2
+    id="{{ _alert_titleId }}"
+    class="{{ ('text-center text-base/6 font-semibold text-balance text-zinc-950 sm:text-left sm:text-sm/6 sm:text-wrap dark:text-white ' ~ attributes.render('class'))|trim }}"
+    {{ attributes }}
+>
+    {%- block content %}{% endblock -%}
+</h2>

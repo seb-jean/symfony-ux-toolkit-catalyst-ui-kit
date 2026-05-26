@@ -1,0 +1,42 @@
+{% set users = [
+    {id: 1, name: 'Leslie Alexander', handle: 'lesliealexander'},
+    {id: 2, name: 'Michael Foster', handle: 'michaelfoster'},
+    {id: 3, name: 'Dries Vincent', handle: 'driesvincent'},
+    {id: 4, name: 'Lindsay Walton', handle: 'lindsaywalton'},
+    {id: 5, name: 'Courtney Henry', handle: 'courtneyhenry'},
+    {id: 6, name: 'Tom Cook', handle: 'tomcook'},
+    {id: 7, name: 'Whitney Francis', handle: 'whitneyfrancis'},
+    {id: 8, name: 'Leonard Krasner', handle: 'leonardkrasner'},
+    {id: 9, name: 'Floyd Miles', handle: 'floydmiles'},
+    {id: 10, name: 'Emily Selman', handle: 'emilyselman'},
+    {id: 11, name: 'Kristin Watson', handle: 'kristinwatson'},
+    {id: 12, name: 'Emma Dorsey', handle: 'emmadorsey'},
+    {id: 13, name: 'Alicia Bell', handle: 'aliciabell'},
+    {id: 14, name: 'Jenny Wilson', handle: 'jennywilson'},
+    {id: 15, name: 'Anna Roberts', handle: 'annaroberts'},
+    {id: 16, name: 'Benjamin Russel', handle: 'benjaminrussel'},
+    {id: 17, name: 'Jeffrey Webb', handle: 'jeffreywebb'},
+    {id: 18, name: 'Kathryn Murphy', handle: 'kathrynmurphy'},
+    {id: 19, name: 'Lawrence Hunter', handle: 'lawrencehunter'},
+    {id: 20, name: 'Yvette Armstrong', handle: 'yvettearmstrong'},
+    {id: 21, name: 'Angela Fisher', handle: 'angelafisher'},
+    {id: 22, name: 'Blake Reid', handle: 'blakereid'},
+    {id: 23, name: 'Hector Gibbons', handle: 'hectorgibbons'},
+    {id: 24, name: 'Fabricio Mendes', handle: 'fabriciomendes'},
+    {id: 25, name: 'Jillian Steward', handle: 'jilliansteward'},
+    {id: 26, name: 'Chelsea Hagon', handle: 'chelseahagon'},
+] %}
+
+<div class="w-full max-w-xs">
+    <twig:Fieldset:Field>
+        <twig:Fieldset:Label>User</twig:Fieldset:Label>
+        <twig:Listbox name="user" defaultValue="3">
+            {% for user in users %}
+                <twig:Listbox:Option value="{{ user.id }}">
+                    <twig:Listbox:Label>{{ user.name }}</twig:Listbox:Label>
+                    <twig:Listbox:Description>@{{ user.handle }}</twig:Listbox:Description>
+                </twig:Listbox:Option>
+            {% endfor %}
+        </twig:Listbox>
+    </twig:Fieldset:Field>
+</div>

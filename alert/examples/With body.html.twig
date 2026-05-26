@@ -1,0 +1,18 @@
+<twig:Alert id="delete-repository" size="sm">
+    <twig:block name="button">
+        <twig:Button type="button" {{ ...alert_button_attrs }}>
+            Delete repository
+        </twig:Button>
+    </twig:block>
+    <twig:Alert:Title>Verification required</twig:Alert:Title>
+    <twig:Alert:Description>To continue, please enter your password.</twig:Alert:Description>
+    <twig:Alert:Body>
+        <twig:Input name="password" type="password" aria-label="Password" placeholder="•••••••" autofocus />
+    </twig:Alert:Body>
+    <twig:Alert:Actions>
+        <twig:Button plain {{ ...alert_close_attrs }}>
+            Cancel
+        </twig:Button>
+        <twig:Button {{ ...alert_close_attrs }}>Continue</twig:Button>
+    </twig:Alert:Actions>
+</twig:Alert>

@@ -1,0 +1,18 @@
+{%- set countries = [
+    {name: 'Canada', flag: 'flagpack:ca'},
+    {name: 'United States', flag: 'flagpack:us'},
+    {name: 'Mexico', flag: 'flagpack:mx'},
+] -%}
+<div class="w-full max-w-56">
+    <twig:Fieldset:Field>
+        <twig:Fieldset:Label>Country</twig:Fieldset:Label>
+        <twig:Combobox name="country" defaultValue="Canada">
+            {%- for country in countries -%}
+                <twig:Combobox:Option value="{{ country.name }}">
+                    <twig:ux:icon name="{{ country.flag }}" class="w-5 sm:w-4" />
+                    <twig:Combobox:Label>{{ country.name }}</twig:Combobox:Label>
+                </twig:Combobox:Option>
+            {%- endfor -%}
+        </twig:Combobox>
+    </twig:Fieldset:Field>
+</div>

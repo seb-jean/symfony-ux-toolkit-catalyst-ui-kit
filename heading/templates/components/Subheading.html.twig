@@ -1,0 +1,10 @@
+{# @prop level number The heading level (1-6). #}
+{# @block content The subheading text. #}
+{%- props level = 2 -%}
+{%- set element = 'h' ~ level -%}
+<{{ element }}
+    class="{{ ('text-base/7 font-semibold text-zinc-950 sm:text-sm/6 dark:text-white ' ~ attributes.render('class'))|trim }}"
+    {{ attributes }}
+>
+    {%- block content %}{% endblock -%}
+</{{ element }}>

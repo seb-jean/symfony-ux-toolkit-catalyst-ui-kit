@@ -1,0 +1,8 @@
+{# @block content The description text. #}
+<p
+    data-slot="description"
+    class="{{ ('col-span-2 col-start-2 row-start-2 text-sm/5 text-zinc-500 group-focus:text-white dark:group-focus:text-white sm:text-xs/5 dark:text-zinc-400 forced-colors:group-focus:text-[HighlightText] ' ~ attributes.render('class'))|trim }}"
+    {{ attributes }}
+>
+    {%- block content %}{% endblock -%}
+</p>

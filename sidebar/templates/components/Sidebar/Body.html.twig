@@ -1,0 +1,7 @@
+{# @block content The scrollable body content. #}
+<div
+    class="{{ ('flex flex-1 flex-col overflow-y-auto p-4 [&>[data-slot=section]+[data-slot=section]]:mt-8 ' ~ attributes.render('class'))|trim }}"
+    {{ attributes }}
+>
+    {%- block content %}{% endblock -%}
+</div>

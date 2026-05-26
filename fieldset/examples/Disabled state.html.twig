@@ -1,0 +1,26 @@
+<div class="w-full max-w-sm h-fit">
+    <twig:Fieldset disabled>
+        <twig:Fieldset:Legend>Shipping details</twig:Fieldset:Legend>
+        <twig:Text>Without this your odds of getting your order are low.</twig:Text>
+        <twig:Fieldset:FieldGroup>
+            <twig:Fieldset:Field>
+                <twig:Fieldset:Label>Street address</twig:Fieldset:Label>
+                <twig:Input name="street_address" />
+            </twig:Fieldset:Field>
+            <twig:Fieldset:Field>
+                <twig:Fieldset:Label>Country</twig:Fieldset:Label>
+                <twig:Select name="country">
+                    <option>Canada</option>
+                    <option>Mexico</option>
+                    <option>United States</option>
+                </twig:Select>
+                <twig:Fieldset:Description>We currently only ship to North America.</twig:Fieldset:Description>
+            </twig:Fieldset:Field>
+            <twig:Fieldset:Field>
+                <twig:Fieldset:Label>Delivery notes</twig:Fieldset:Label>
+                <twig:Textarea name="notes" />
+                <twig:Fieldset:Description>If you have a tiger, we'd like to know about it.</twig:Fieldset:Description>
+            </twig:Fieldset:Field>
+        </twig:Fieldset:FieldGroup>
+    </twig:Fieldset>
+</div>

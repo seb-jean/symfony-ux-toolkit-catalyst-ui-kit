@@ -1,0 +1,34 @@
+{# @prop name string|null Name of the field used for form submission. #}
+{# @prop value string|null The currently selected value. #}
+{# @prop placeholder string|null Text shown when no option is selected. #}
+{# @block content The `Listbox:Option` elements. #}
+{%- props name = null, value = null, placeholder = null -%}
+
+<el-select{{ name ? ' name="' ~ name ~ '"' : '' }}{{ value is not null ? ' value="' ~ value ~ '"' : '' }}
+    class="{{ ('group relative block w-full before:absolute before:inset-px before:rounded-[calc(var(--radius-lg)-1px)] before:bg-white before:shadow-sm dark:before:hidden after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:ring-transparent after:ring-inset has-[:popover-open]:after:ring-2 has-[:popover-open]:after:ring-blue-500 ' ~ attributes.render('class'))|trim }}"
+    {{ attributes }}
+>
+    <button
+        type="button"
+        aria-haspopup="listbox"
+        class="relative block min-h-11 w-full appearance-none rounded-lg border border-zinc-950/10 bg-transparent py-[calc(--spacing(2.5)-1px)] pr-[calc(--spacing(7)-1px)] pl-[calc(--spacing(3.5)-1px)] text-left text-base/6 text-zinc-950 hover:border-zinc-950/20 focus:outline-hidden sm:min-h-9 sm:py-[calc(--spacing(1.5)-1px)] sm:pl-[calc(--spacing(3)-1px)] sm:text-sm/6 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-white/20"
+    >
+        <el-selectedcontent class="block truncate [&>svg]:hidden">
+            <span class="{{ value is null ? 'text-zinc-500' : '' }}">{{ placeholder }}</span>
+        </el-selectedcontent>
+        <span class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+            <svg class="size-5 stroke-zinc-500 sm:size-4 dark:stroke-zinc-400 forced-colors:stroke-[CanvasText]" viewBox="0 0 16 16" aria-hidden="true" fill="none">
+                <path d="M5.75 10.75L8 13L10.25 10.75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M10.25 5.25L8 3L5.75 5.25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </span>
+    </button>
+    <el-options
+        popover
+        anchor="bottom"
+        style="--anchor-gap: 0.25rem"
+        class="z-10 max-h-60 w-[var(--input-width)] overflow-auto rounded-xl p-1 outline outline-transparent bg-white/75 shadow-lg ring-1 ring-zinc-950/10 backdrop-blur-xl dark:bg-zinc-800/75 dark:ring-white/10 dark:ring-inset"
+    >
+        {%- block content %}{% endblock -%}
+    </el-options>
+</el-select>

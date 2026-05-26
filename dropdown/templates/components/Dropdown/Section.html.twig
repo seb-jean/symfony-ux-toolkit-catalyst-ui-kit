@@ -1,0 +1,8 @@
+{# @block content The dropdown items for the section. #}
+<div
+    role="group"
+    class="{{ ('col-span-full supports-[grid-template-columns:subgrid]:grid supports-[grid-template-columns:subgrid]:grid-cols-[auto_1fr_1.5rem_0.5rem_auto] ' ~ attributes.render('class'))|trim }}"
+    {{ attributes }}
+>
+    {%- block content %}{% endblock -%}
+</div>

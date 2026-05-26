@@ -1,0 +1,8 @@
+{# @block content The paragraph text. #}
+<p
+    data-slot="text"
+    class="{{ ('text-base/6 text-zinc-500 sm:text-sm/6 dark:text-zinc-400 ' ~ attributes.render('class'))|trim }}"
+    {{ attributes }}
+>
+    {%- block content %}{% endblock -%}
+</p>

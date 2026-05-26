@@ -1,0 +1,16 @@
+{# @prop value string The value submitted when this option is selected. #}
+{# @block content The option content, typically a `Listbox:Label` and optionally a `Listbox:Description`. #}
+{%- props value -%}
+
+<el-option
+    value="{{ value }}"
+    class="{{ ('group/option grid cursor-default grid-cols-[--spacing(5)_1fr] items-center gap-x-2 rounded-lg py-2.5 pr-3.5 pl-2 text-base/6 text-zinc-950 outline-hidden focus:bg-blue-500 focus:text-white sm:grid-cols-[--spacing(4)_1fr] sm:py-1.5 sm:pr-3 sm:pl-1.5 sm:text-sm/6 dark:text-white ' ~ attributes.render('class'))|trim }}"
+    {{ attributes }}
+>
+    <svg class="col-start-1 size-5 self-center stroke-current opacity-0 group-aria-[selected=true]/option:opacity-100 sm:size-4" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M4 8.5l3 3L12 4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <span class="col-start-2 flex items-center gap-2">
+        {%- block content %}{% endblock -%}
+    </span>
+</el-option>

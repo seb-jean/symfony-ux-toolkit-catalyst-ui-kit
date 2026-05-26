@@ -1,0 +1,10 @@
+{# @block content The label text. #}
+{%- set _field_disabled = inject('field.disabled', false) -%}
+<label
+    data-slot="label"
+    {% if _field_disabled %}data-disabled{% endif %}
+    class="{{ ('text-base/6 text-zinc-950 select-none data-disabled:opacity-50 sm:text-sm/6 dark:text-white ' ~ attributes.render('class'))|trim }}"
+    {{ attributes }}
+>
+    {%- block content %}{% endblock -%}
+</label>

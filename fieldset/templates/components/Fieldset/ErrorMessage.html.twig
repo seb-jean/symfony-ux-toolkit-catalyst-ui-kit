@@ -1,0 +1,10 @@
+{# @block content The error message text. #}
+{%- set _field_disabled = inject('field.disabled', false) -%}
+<p
+    data-slot="error"
+    {% if _field_disabled %}data-disabled{% endif %}
+    class="{{ ('text-base/6 text-red-600 data-disabled:opacity-50 sm:text-sm/6 dark:text-red-500 ' ~ attributes.render('class'))|trim }}"
+    {{ attributes }}
+>
+    {%- block content %}{% endblock -%}
+</p>

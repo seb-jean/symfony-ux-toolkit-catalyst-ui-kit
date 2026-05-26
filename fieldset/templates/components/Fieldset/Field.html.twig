@@ -1,0 +1,20 @@
+{# @prop disabled boolean Whether or not to disable the entire field. #}
+{# @block content The field content, typically includes `Fieldset:Label`, a form control, and optionally `Fieldset:Description` or `Fieldset:ErrorMessage`. #}
+{%- props disabled = false -%}
+{%- set _fieldset_disabled = inject('fieldset.disabled', false) -%}
+{%- set disabled = disabled or _fieldset_disabled -%}
+{%- do provide('field.disabled', disabled) -%}
+<div
+    class="{{ html_classes(
+        attributes.render('class') ?? '',
+        '[&>[data-slot=label]+[data-slot=control]]:mt-3',
+        '[&>[data-slot=label]+[data-slot=description]]:mt-1',
+        '[&>[data-slot=description]+[data-slot=control]]:mt-3',
+        '[&>[data-slot=control]+[data-slot=description]]:mt-3',
+        '[&>[data-slot=control]+[data-slot=error]]:mt-3',
+        '*:data-[slot=label]:font-medium',
+    ) }}"
+    {{ attributes }}
+>
+    {%- block content %}{% endblock -%}
+</div>

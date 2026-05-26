@@ -1,0 +1,20 @@
+{%- set users = [
+    {name: 'Leslie Alexander'},
+    {name: 'Michael Foster'},
+    {name: 'Dries Vincent'},
+    {name: 'Bonnie Green'},
+    {name: 'Courtney Henry'},
+] -%}
+<div class="w-full max-w-56">
+    <twig:Fieldset:Field>
+        <twig:Fieldset:Label>Assigned to</twig:Fieldset:Label>
+        <twig:Combobox invalid name="user" placeholder="Select user…">
+            {%- for user in users -%}
+                <twig:Combobox:Option value="{{ user.name }}">
+                    <twig:Combobox:Label>{{ user.name }}</twig:Combobox:Label>
+                </twig:Combobox:Option>
+            {%- endfor -%}
+        </twig:Combobox>
+        <twig:Fieldset:ErrorMessage>A user is required.</twig:Fieldset:ErrorMessage>
+    </twig:Fieldset:Field>
+</div>

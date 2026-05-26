@@ -1,0 +1,42 @@
+{# @block content The cell content. #}
+{%- set _table_bleed = inject('table.bleed', false) -%}
+{%- set _table_dense = inject('table.dense', false) -%}
+{%- set _table_grid = inject('table.grid', false) -%}
+{%- set _table_striped = inject('table.striped', false) -%}
+{%- set _tableRow_href = inject('tableRow.href', null) -%}
+{%- set _tableRow_target = inject('tableRow.target', null) -%}
+{%- set _tableRow_title = inject('tableRow.title', null) -%}
+{%- set style = html_cva(
+    base: 'relative px-4 first:pl-(--gutter,--spacing(2)) last:pr-(--gutter,--spacing(2))',
+    variants: {
+        striped: {
+            false: 'border-b border-zinc-950/5 dark:border-white/5',
+        },
+        grid: {
+            true: 'border-l border-l-zinc-950/5 first:border-l-0 dark:border-l-white/5',
+        },
+        dense: {
+            true: 'py-2.5',
+            false: 'py-4',
+        },
+        bleed: {
+            false: 'sm:first:pl-1 sm:last:pr-1',
+        },
+    },
+) -%}
+<td
+    class="{{ style.apply({striped: _table_striped, grid: _table_grid, dense: _table_dense, bleed: _table_bleed}, attributes.render('class')) }}"
+    {{ attributes }}
+>
+    {%- if _tableRow_href -%}
+        <a
+            data-row-link
+            href="{{ _tableRow_href }}"
+            {% if _tableRow_target is not empty %}target="{{ _tableRow_target }}"{% endif %}
+            {% if _tableRow_title is not empty %}aria-label="{{ _tableRow_title }}"{% endif %}
+            class="absolute inset-0 focus:outline-hidden"
+            {{ attributes.nested('link').defaults({tabindex: '-1'}) }}
+        ></a>
+    {%- endif -%}
+    {%- block content %}{% endblock -%}
+</td>

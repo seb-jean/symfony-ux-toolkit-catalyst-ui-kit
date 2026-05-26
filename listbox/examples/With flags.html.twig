@@ -1,0 +1,19 @@
+{%- set countries = [
+    {name: 'Canada', code: 'CA', flag: 'flagpack:ca'},
+    {name: 'United States', code: 'US', flag: 'flagpack:us'},
+    {name: 'Mexico', code: 'MX', flag: 'flagpack:mx'},
+] -%}
+
+<div class="w-full max-w-56">
+    <twig:Fieldset:Field>
+        <twig:Fieldset:Label>Country</twig:Fieldset:Label>
+        <twig:Listbox name="country" defaultValue="MX">
+            {%- for country in countries -%}
+                <twig:Listbox:Option value="{{ country.code }}">
+                    <twig:ux:icon name="{{ country.flag }}" class="w-5 sm:w-4" />
+                    <twig:Listbox:Label>{{ country.name }}</twig:Listbox:Label>
+                </twig:Listbox:Option>
+            {%- endfor -%}
+        </twig:Listbox>
+    </twig:Fieldset:Field>
+</div>

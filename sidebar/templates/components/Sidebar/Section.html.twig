@@ -1,0 +1,8 @@
+{# @block content The sidebar items. #}
+<div
+    data-slot="section"
+    class="{{ ('flex flex-col gap-0.5 ' ~ attributes.render('class'))|trim }}"
+    {{ attributes }}
+>
+    {%- block content %}{% endblock -%}
+</div>

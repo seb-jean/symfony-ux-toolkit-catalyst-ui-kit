@@ -1,0 +1,31 @@
+{# @prop href string|null The target URL when using the item as a link. #}
+{# @block content The dropdown item text. #}
+{%- props href = null -%}
+{%- set element = href is not empty ? 'a' : 'button' -%}
+<{{ element }}
+    {% if href is not empty %}href="{{ href }}"{% endif %}
+    {% if href is empty %}type="button"{% endif %}
+    class="{{ html_classes(
+        attributes.render('class') ?? '',
+        # Base
+        'group cursor-default rounded-lg px-3.5 py-2.5 focus:outline-hidden sm:px-3 sm:py-1.5',
+        # Text
+        'text-left text-base/6 text-zinc-950 sm:text-sm/6 dark:text-white forced-colors:text-[CanvasText]',
+        # Focus
+        'focus:bg-blue-500 focus:text-white',
+        # Disabled
+        'disabled:opacity-50',
+        # Forced colors
+        'forced-color-adjust-none forced-colors:focus:bg-[Highlight] forced-colors:focus:text-[HighlightText] forced-colors:focus:*:data-[slot=icon]:text-[HighlightText]',
+        # Grid layout
+        'col-span-full grid grid-cols-[auto_1fr_1.5rem_0.5rem_auto] items-center supports-[grid-template-columns:subgrid]:grid-cols-subgrid',
+        # Icons
+        '*:data-[slot=icon]:col-start-1 *:data-[slot=icon]:row-start-1 *:data-[slot=icon]:mr-2.5 *:data-[slot=icon]:-ml-0.5 *:data-[slot=icon]:size-5 sm:*:data-[slot=icon]:mr-2 sm:*:data-[slot=icon]:size-4',
+        '*:data-[slot=icon]:text-zinc-500 focus:*:data-[slot=icon]:text-white dark:*:data-[slot=icon]:text-zinc-400 dark:focus:*:data-[slot=icon]:text-white',
+        # Avatar
+        '*:data-[slot=avatar]:mr-2.5 *:data-[slot=avatar]:-ml-1 *:data-[slot=avatar]:size-6 sm:*:data-[slot=avatar]:mr-2 sm:*:data-[slot=avatar]:size-5',
+    ) }}"
+    {{ attributes }}
+>
+    {%- block content %}{% endblock -%}
+</{{ element }}>

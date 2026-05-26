@@ -1,0 +1,24 @@
+{
+    "$schema": "../../../schema-kit-recipe-v1.json",
+    "type": "component",
+    "name": "Dropdown",
+    "description": "Probably the number one reason you're looking for a UI kit in the first place.",
+    "copy-files": {
+        "templates/": "templates/"
+    },
+    "dependencies": {
+        "composer": [
+            "twig/extra-bundle",
+            "twig/html-extra:^3.12.0"
+        ],
+        "importmap": [
+            "@tailwindplus/elements"
+        ],
+        "npm": [
+            "@tailwindplus/elements"
+        ],
+        "recipe": [
+            "button"
+        ]
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "$schema": "../../../schema-kit-recipe-v1.json",
+    "type": "component",
+    "name": "Listbox",
+    "description": "A painstakingly re-engineered select menu, just so you can put a flag in it or have a placeholder.",
+    "copy-files": {
+        "templates/": "templates/"
+    },
+    "dependencies": {
+        "composer": [
+            "symfony/ux-icons",
+            "twig/extra-bundle",
+            "twig/html-extra:^3.12.0"
+        ],
+        "importmap": [
+            "@tailwindplus/elements"
+        ],
+        "npm": [
+            "@tailwindplus/elements"
+        ]
+    }
+}

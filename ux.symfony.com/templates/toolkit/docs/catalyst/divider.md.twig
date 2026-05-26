@@ -1,0 +1,25 @@
+{% extends 'toolkit/docs/_base_component.md.twig' %}
+
+{% block demo %}
+{{ toolkit_code_demo(kit_id.value, component.name, {height: '99px'}) }}
+{% endblock %}
+
+{% block examples %}
+### Basic example
+
+Use the `Divider` component to add a horizontal rule between items:
+
+{{ toolkit_code_example(kit_id.value, component.name, 'Basic example', {height: '99px'}) }}
+
+### With reduced contrast
+
+Use the `soft` prop for secondary dividers:
+
+{{ toolkit_code_example(kit_id.value, component.name, 'With reduced contrast', {height: '99px'}) }}
+
+### With spacing
+
+Use utility classes like `my-*` to control the vertical spacing around a divider:
+
+{{ toolkit_code_example(kit_id.value, component.name, 'With spacing', {height: '147px'}) }}
+{% endblock %}

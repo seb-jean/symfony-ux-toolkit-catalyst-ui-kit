@@ -1,0 +1,24 @@
+{% set users = [
+    {id: 1, name: 'Leslie Alexander', initials: 'la', avatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'},
+    {id: 2, name: 'Michael Foster', initials: 'mf', avatarUrl: 'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'},
+    {id: 3, name: 'Dries Vincent', initials: 'dv', avatarUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'},
+    {id: 4, name: 'Lindsay Walton', initials: 'lw', avatarUrl: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'},
+    {id: 5, name: 'Courtney Henry', initials: 'ch', avatarUrl: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'},
+    {id: 6, name: 'Tom Cook', initials: 'tc', avatarUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'},
+    {id: 7, name: 'Whitney Francis', initials: 'wf', avatarUrl: 'https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'},
+    {id: 8, name: 'Leonard Krasner', initials: 'lk', avatarUrl: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'},
+] %}
+
+<div class="w-full max-w-56">
+    <twig:Fieldset:Field>
+        <twig:Fieldset:Label>Assigned to</twig:Fieldset:Label>
+        <twig:Listbox name="user" defaultValue="1">
+            {% for user in users %}
+                <twig:Listbox:Option value="{{ user.id }}">
+                    <twig:Avatar slot="icon" src="{{ user.avatarUrl }}" initials="{{ user.initials }}" class="bg-purple-500 text-white" />
+                    <twig:Listbox:Label>{{ user.name }}</twig:Listbox:Label>
+                </twig:Listbox:Option>
+            {% endfor %}
+        </twig:Listbox>
+    </twig:Fieldset:Field>
+</div>
