@@ -1,5 +1,8 @@
 {# @prop color string The accent color when selected. #}
-{%- props color = 'dark/zinc' -%}
+{# @prop disabled boolean Whether or not to disable the radio. #}
+{%- props color = 'dark/zinc', disabled = false -%}
+{%- set _radioField_disabled = inject('radioField.disabled', false) -%}
+{%- set disabled = disabled or _radioField_disabled -%}
 
 {%- set _colors = {
     'dark/zinc': '[--radio-checked-bg:var(--color-zinc-900)] [--radio-checked-border:var(--color-zinc-950)]/90 [--radio-checked-indicator:var(--color-white)] dark:[--radio-checked-bg:var(--color-zinc-600)]',
@@ -35,7 +38,8 @@
     <input
         type="radio"
         class="peer sr-only"
-        {{ attributes.only('name', 'value', 'checked', 'disabled', 'required', 'form', 'aria-label', 'aria-labelledby', 'aria-describedby') }}
+        {% if disabled %}disabled{% endif %}
+        {{ attributes.only('name', 'value', 'checked', 'required', 'form', 'aria-label', 'aria-labelledby', 'aria-describedby') }}
     />
     <span class="{{ 'relative isolate flex size-4.75 shrink-0 rounded-full sm:size-4.25 before:absolute before:inset-0 before:-z-10 before:rounded-full before:bg-white before:shadow-sm peer-checked:before:bg-(--radio-checked-bg) dark:before:hidden dark:bg-white/5 dark:peer-checked:bg-(--radio-checked-bg) border border-zinc-950/15 peer-checked:border-transparent hover:border-zinc-950/30 peer-checked:bg-(--radio-checked-border) dark:border-white/15 dark:peer-checked:border-white/5 dark:hover:border-white/30 after:absolute after:inset-0 after:rounded-full after:shadow-[inset_0_1px_--theme(--color-white/15%)] dark:after:-inset-px dark:after:hidden dark:after:rounded-full dark:peer-checked:after:block [--radio-indicator:transparent] peer-checked:[--radio-indicator:var(--radio-checked-indicator)] hover:[--radio-indicator:var(--color-zinc-900)]/10 dark:hover:[--radio-indicator:var(--color-zinc-700)] peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-blue-500 peer-disabled:opacity-50 peer-disabled:border-zinc-950/25 peer-disabled:bg-zinc-950/5 peer-disabled:[--radio-checked-indicator:var(--color-zinc-950)]/50 peer-disabled:before:bg-transparent dark:peer-disabled:border-white/20 dark:peer-disabled:bg-white/2.5 dark:peer-disabled:[--radio-checked-indicator:var(--color-white)]/50 ' ~ _colors[color]|default(_colors['dark/zinc']) }}">
         <span class="size-full rounded-full border-[4.5px] border-transparent bg-(--radio-indicator) bg-clip-padding forced-colors:border-[Canvas] forced-colors:peer-checked:group-[]:border-[Highlight]"></span>

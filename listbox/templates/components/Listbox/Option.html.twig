@@ -1,16 +1,39 @@
 {# @prop value string The value submitted when this option is selected. #}
+{# @prop disabled bool Whether or not to disabled the option. #}
 {# @block content The option content, typically a `Listbox:Label` and optionally a `Listbox:Description`. #}
-{%- props value -%}
+{%- props value, disabled = false -%}
 
 <el-option
+    {% if disabled %}disabled data-disabled{% endif %}
     value="{{ value }}"
-    class="{{ ('group/option grid cursor-default grid-cols-[--spacing(5)_1fr] items-center gap-x-2 rounded-lg py-2.5 pr-3.5 pl-2 text-base/6 text-zinc-950 outline-hidden focus:bg-blue-500 focus:text-white sm:grid-cols-[--spacing(4)_1fr] sm:py-1.5 sm:pr-3 sm:pl-1.5 sm:text-sm/6 dark:text-white ' ~ attributes.render('class'))|trim }}"
-    {{ attributes }}
+    class="{{ html_classes(
+              # Basic layout
+              'group/option grid cursor-default grid-cols-[--spacing(5)_1fr] items-baseline gap-x-2 rounded-lg py-2.5 pr-3.5 pl-2 sm:grid-cols-[--spacing(4)_1fr] sm:py-1.5 sm:pr-3 sm:pl-1.5',
+              # Typography #}
+              'text-base/6 text-zinc-950 sm:text-sm/6 dark:text-white forced-colors:text-[CanvasText]',
+              # Focus
+              'outline-hidden focus:bg-blue-500 focus:text-white',
+              # Forced colors mode
+              'forced-color-adjust-none forced-colors:focus:bg-[Highlight] forced-colors:focus:text-[HighlightText]',
+              # Disabled
+              'data-disabled:opacity-50',
+          ) }}"
+    {{ attributes.without('class') }}
 >
-    <svg class="col-start-1 size-5 self-center stroke-current opacity-0 group-aria-[selected=true]/option:opacity-100 sm:size-4" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-        <path d="M4 8.5l3 3L12 4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    <svg class="relative hidden size-5 self-center stroke-current group-aria-selected/option:inline sm:size-4" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M4 8.5l3 3L12 4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
     </svg>
-    <span class="col-start-2 flex items-center gap-2">
+    <span class="{{ html_classes(
+        attributes.render('class') ?? '',
+        # Base
+        'flex min-w-0 items-center col-start-2',
+        # Icons
+        '*:data-[slot=icon]:size-5 *:data-[slot=icon]:shrink-0 sm:*:data-[slot=icon]:size-4',
+        '*:data-[slot=icon]:text-zinc-500 group-focus/option:*:data-[slot=icon]:text-white dark:*:data-[slot=icon]:text-zinc-400',
+        'forced-colors:*:data-[slot=icon]:text-[CanvasText] forced-colors:group-focus/option:*:data-[slot=icon]:text-[Canvas]',
+        # Avatars
+        '*:data-[slot=avatar]:-mx-0.5 *:data-[slot=avatar]:size-6 sm:*:data-[slot=avatar]:size-5'
+    ) }}">
         {%- block content %}{% endblock -%}
     </span>
 </el-option>

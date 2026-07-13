@@ -15,7 +15,7 @@
         <twig:Listbox name="user" defaultValue="1">
             {% for user in users %}
                 <twig:Listbox:Option value="{{ user.id }}">
-                    <twig:Avatar slot="icon" src="{{ user.avatarUrl }}" initials="{{ user.initials }}" class="bg-purple-500 text-white" />
+                    <twig:Avatar src="{{ user.avatarUrl }}" initials="{{ user.initials }}" class="bg-purple-500 text-white" />
                     <twig:Listbox:Label>{{ user.name }}</twig:Listbox:Label>
                 </twig:Listbox:Option>
             {% endfor %}

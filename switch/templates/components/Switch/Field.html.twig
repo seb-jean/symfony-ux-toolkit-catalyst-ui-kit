@@ -1,5 +1,12 @@
+{# @prop disabled boolean Whether or not to disable the entire field. #}
 {# @block content The switch, label, and optional description. #}
+{%- props disabled = false -%}
+{%- set _fieldset_disabled = inject('fieldset.disabled', false) -%}
+{%- set disabled = disabled or _fieldset_disabled -%}
+{%- do provide('switchField.disabled', disabled) -%}
+{%- do provide('fieldsetField.disabled', disabled) -%}
 <div
+    {% if disabled %}data-disabled{% endif %}
     class="{{ ('grid grid-cols-[1fr_auto] gap-x-8 gap-y-1 sm:grid-cols-[1fr_auto] *:data-[slot=control]:col-start-2 *:data-[slot=control]:self-start sm:*:data-[slot=control]:mt-0.5 *:data-[slot=label]:col-start-1 *:data-[slot=label]:row-start-1 *:data-[slot=description]:col-start-1 *:data-[slot=description]:row-start-2 has-data-[slot=description]:**:data-[slot=label]:font-medium ' ~ attributes.render('class'))|trim }}"
     {{ attributes.defaults({
         'data-slot': 'field',

@@ -2,8 +2,8 @@
 {# @prop invalid boolean Whether the input is in an invalid state. #}
 {# @prop type string The input type. #}
 {%- props disabled = false, invalid = false, type = 'text' -%}
-{%- set _field_disabled = inject('field.disabled', false) -%}
-{%- set disabled = disabled or _field_disabled -%}
+{%- set _fieldsetField_disabled = inject('fieldsetField.disabled', false) -%}
+{%- set disabled = disabled or _fieldsetField_disabled -%}
 {%- set _dateTypes = ['date', 'datetime-local', 'month', 'time', 'week'] -%}
 <span
     data-slot="control"

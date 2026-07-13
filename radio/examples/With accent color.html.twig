@@ -1,10 +1,12 @@
-<twig:Radio:Group aria-label="Resale and transfers">
-    <twig:Radio:Field>
-        <twig:Radio color="sky" name="resale" value="permit" checked />
-        <twig:Fieldset:Label>Allow tickets to be resold</twig:Fieldset:Label>
-    </twig:Radio:Field>
-    <twig:Radio:Field>
-        <twig:Radio color="sky" name="resale" value="forbid" />
-        <twig:Fieldset:Label>Don't allow tickets to be resold</twig:Fieldset:Label>
-    </twig:Radio:Field>
-</twig:Radio:Group>
+<form>
+    <twig:Radio:Group name="resale" defaultValue="permit" aria-label="Resale and transfers">
+        <twig:Radio:Field>
+            <twig:Radio color="sky" value="permit" />
+            <twig:Fieldset:Label>Allow tickets to be resold</twig:Fieldset:Label>
+        </twig:Radio:Field>
+        <twig:Radio:Field>
+            <twig:Radio color="sky" value="forbid" />
+            <twig:Fieldset:Label>Don't allow tickets to be resold</twig:Fieldset:Label>
+        </twig:Radio:Field>
+    </twig:Radio:Group>
+</form>

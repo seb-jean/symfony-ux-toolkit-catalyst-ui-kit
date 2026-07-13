@@ -1,16 +1,18 @@
-<twig:Fieldset>
-    <twig:Fieldset:Legend>Resale and transfers</twig:Fieldset:Legend>
-    <twig:Text>Decide if people buy tickets from you or from scalpers.</twig:Text>
-    <twig:Radio:Group>
-        <twig:Radio:Field>
-            <twig:Radio name="resale" value="permit" checked />
-            <twig:Fieldset:Label>Allow tickets to be resold</twig:Fieldset:Label>
-            <twig:Fieldset:Description>Customers can resell or transfer their tickets if they can't make it to the event.</twig:Fieldset:Description>
-        </twig:Radio:Field>
-        <twig:Radio:Field>
-            <twig:Radio name="resale" value="forbid" />
-            <twig:Fieldset:Label>Don't allow tickets to be resold</twig:Fieldset:Label>
-            <twig:Fieldset:Description>Tickets cannot be resold or transferred to another person.</twig:Fieldset:Description>
-        </twig:Radio:Field>
-    </twig:Radio:Group>
-</twig:Fieldset>
+<form class="w-full max-w-sm">
+    <twig:Fieldset>
+        <twig:Fieldset:Legend>Resale and transfers</twig:Fieldset:Legend>
+        <twig:Text>Decide if people buy tickets from you or from scalpers.</twig:Text>
+        <twig:Radio:Group name="resale" defaultValue="permit">
+            <twig:Radio:Field>
+                <twig:Radio value="permit" />
+                <twig:Fieldset:Label>Allow tickets to be resold</twig:Fieldset:Label>
+                <twig:Fieldset:Description>Customers can resell or transfer their tickets if they can't make it to the event.</twig:Fieldset:Description>
+            </twig:Radio:Field>
+            <twig:Radio:Field>
+                <twig:Radio value="forbid" />
+                <twig:Fieldset:Label>Don't allow tickets to be resold</twig:Fieldset:Label>
+                <twig:Fieldset:Description>Tickets cannot be resold or transferred to another person.</twig:Fieldset:Description>
+            </twig:Radio:Field>
+        </twig:Radio:Group>
+    </twig:Fieldset>
+</form>

@@ -2,8 +2,8 @@
 {# @prop invalid boolean Whether the textarea is in an invalid state. #}
 {# @prop resizable boolean Whether the textarea is resizable. #}
 {%- props disabled = false, invalid = false, resizable = true -%}
-{%- set _field_disabled = inject('field.disabled', false) -%}
-{%- set disabled = disabled or _field_disabled -%}
+{%- set _fieldsetField_disabled = inject('fieldsetField.disabled', false) -%}
+{%- set disabled = disabled or _fieldsetField_disabled -%}
 <span
     data-slot="control"
     class="{{ html_classes(

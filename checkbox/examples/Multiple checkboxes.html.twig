@@ -1,10 +1,14 @@
-<twig:Checkbox:Group>
-    <twig:Checkbox:Field>
-        <twig:Checkbox name="discoverability[]" value="show_on_events_page" />
-        <twig:Fieldset:Label>Show on events page</twig:Fieldset:Label>
-    </twig:Checkbox:Field>
-    <twig:Checkbox:Field>
-        <twig:Checkbox name="discoverability[]" value="allow_embedding" />
-        <twig:Fieldset:Label>Allow embedding</twig:Fieldset:Label>
-    </twig:Checkbox:Field>
-</twig:Checkbox:Group>
+<form class="w-full max-w-sm">
+    <twig:Checkbox:Group>
+        <twig:Checkbox:Field>
+            <twig:Checkbox name="show_on_events_page" defaultChecked />
+            <twig:Fieldset:Label>Show on events page</twig:Fieldset:Label>
+            <twig:Fieldset:Description>Make this event visible on your profile.</twig:Fieldset:Description>
+        </twig:Checkbox:Field>
+        <twig:Checkbox:Field>
+            <twig:Checkbox name="allow_embedding" />
+            <twig:Fieldset:Label>Allow embedding</twig:Fieldset:Label>
+            <twig:Fieldset:Description>Allow others to embed your event details on their own site.</twig:Fieldset:Description>
+        </twig:Checkbox:Field>
+    </twig:Checkbox:Group>
+</form>

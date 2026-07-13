@@ -3,8 +3,8 @@
 {# @prop multiple boolean Whether multiple options can be selected. #}
 {# @block content The `<option>` elements. #}
 {%- props disabled = false, invalid = false, multiple = false -%}
-{%- set _field_disabled = inject('field.disabled', false) -%}
-{%- set disabled = disabled or _field_disabled -%}
+{%- set _fieldsetField_disabled = inject('fieldsetField.disabled', false) -%}
+{%- set disabled = disabled or _fieldsetField_disabled -%}
 <span
     data-slot="control"
     class="{{ html_classes(

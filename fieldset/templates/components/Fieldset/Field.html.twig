@@ -3,7 +3,7 @@
 {%- props disabled = false -%}
 {%- set _fieldset_disabled = inject('fieldset.disabled', false) -%}
 {%- set disabled = disabled or _fieldset_disabled -%}
-{%- do provide('field.disabled', disabled) -%}
+{%- do provide('fieldsetField.disabled', disabled) -%}
 <div
     class="{{ html_classes(
         attributes.render('class') ?? '',

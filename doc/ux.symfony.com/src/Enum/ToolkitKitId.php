@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace App\Enum;
+namespace ux.symfony.com\src\Enum;
 
 /**
  * For convenience and performance, official UX Toolkit kits are hardcoded.

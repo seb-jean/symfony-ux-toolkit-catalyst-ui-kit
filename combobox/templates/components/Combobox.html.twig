@@ -6,8 +6,8 @@
 {# @prop placeholder string The text to show when no option is selected. #}
 {# @block content The `Combobox:Option` elements. #}
 {%- props disabled = false, invalid = false, anchor = 'bottom', defaultValue = '', ariaLabel = '', placeholder = '' -%}
-{%- set _field_disabled = inject('field.disabled', false) -%}
-{%- set disabled = disabled or _field_disabled -%}
+{%- set _fieldsetField_disabled = inject('fieldsetField.disabled', false) -%}
+{%- set disabled = disabled or _fieldsetField_disabled -%}
 <span
     data-slot="control"
     class="{{ html_classes(
@@ -69,7 +69,7 @@
             anchor="{{ anchor }}"
             popover
             class="{{ html_classes(
-                'max-h-60 w-(--button-width)',
+                'max-h-60',
                 # Anchor positioning
                 '[--anchor-gap:--spacing(2)] [--anchor-padding:--spacing(4)] sm:[&[anchor~=start]]:[--anchor-offset:-4px]',
                 # Base styles

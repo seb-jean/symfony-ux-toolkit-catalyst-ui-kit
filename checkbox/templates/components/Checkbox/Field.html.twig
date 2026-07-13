@@ -1,9 +1,27 @@
+{# @prop disabled boolean Whether or not to disable the entire field. #}
 {# @block content The checkbox, label, and optional description. #}
+{%- props disabled = false -%}
+{%- set _fieldset_disabled = inject('fieldset.disabled', false) -%}
+{%- set disabled = disabled or _fieldset_disabled -%}
+{%- do provide('checkboxField.disabled', disabled) -%}
+{%- do provide('fieldsetField.disabled', disabled) -%}
 <div
-    class="{{ ('grid grid-cols-[1.125rem_1fr] gap-x-4 gap-y-1 sm:grid-cols-[1rem_1fr] *:data-[slot=control]:col-start-1 *:data-[slot=control]:row-start-1 *:data-[slot=control]:mt-0.75 sm:*:data-[slot=control]:mt-1 *:data-[slot=label]:col-start-2 *:data-[slot=label]:row-start-1 *:data-[slot=description]:col-start-2 *:data-[slot=description]:row-start-2 has-data-[slot=description]:**:data-[slot=label]:font-medium ' ~ attributes.render('class'))|trim }}"
-    {{ attributes.defaults({
-        'data-slot': 'field',
-    }) }}
+    data-slot="field"
+    {% if disabled %}data-disabled{% endif %}
+    class="{{ html_classes(
+        attributes.render('class') ?? '',
+        # Base layout
+        'grid grid-cols-[1.125rem_1fr] gap-x-4 gap-y-1 sm:grid-cols-[1rem_1fr]',
+        # Control layout
+        '*:data-[slot=control]:col-start-1 *:data-[slot=control]:row-start-1 *:data-[slot=control]:mt-0.75 sm:*:data-[slot=control]:mt-1',
+        # Label layout
+        '*:data-[slot=label]:col-start-2 *:data-[slot=label]:row-start-1',
+        # Description layout
+        '*:data-[slot=description]:col-start-2 *:data-[slot=description]:row-start-2',
+        # With description
+        'has-data-[slot=description]:**:data-[slot=label]:font-medium',
+    ) }}"
+    {{ attributes }}
 >
     {%- block content %}{% endblock -%}
 </div>
