@@ -1,4 +1,3 @@
-{# @block content The error message text. #}
 {%- set _fieldsetField_disabled = inject('fieldsetField.disabled', false) -%}
 <p
     data-slot="error"
@@ -7,5 +6,6 @@
         class: 'text-base/6 text-red-600 data-disabled:opacity-50 sm:text-sm/6 dark:text-red-500',
     }) }}
 >
+    {##- The error message text. -#}
     {%- block content %}{% endblock -%}
 </p>

@@ -96,7 +96,7 @@ Omit the `Pagination:List` and `Pagination:Page` components to render just the p
 <div class="w-full">
     <twig:Pagination>
         <twig:Pagination:Previous />
-        <twig:Pagination:Next href="?page=2" />
+        <twig:Pagination:Next href="?after=421c1b0" />
     </twig:Pagination>
 </div>
 ```

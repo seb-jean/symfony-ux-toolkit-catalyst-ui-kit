@@ -1,6 +1,7 @@
-{# @prop disabled boolean Whether or not to disable the entire fieldset. #}
-{# @block content The fieldset content, typically includes `Legend`, `Text`, and `Fieldset:FieldGroup`. #}
-{%- props disabled = false -%}
+{%- props
+    ## boolean Whether or not to disable the entire fieldset.
+    disabled = false
+-%}
 {%- do provide('fieldset.disabled', disabled) -%}
 <fieldset
     {% if disabled %}disabled{% endif %}
@@ -8,5 +9,6 @@
         class: '*:data-[slot=text]:mt-1 [&>*+[data-slot=control]]:mt-6',
     }) }}
 >
+    {##- The fieldset content, typically includes `Legend`, `Text`, and `Fieldset:FieldGroup`. -#}
     {%- block content %}{% endblock -%}
 </fieldset>

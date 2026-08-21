@@ -1,11 +1,13 @@
-{# @prop level number The heading level (1-6). #}
-{# @block content The subheading text. #}
-{%- props level = 2 -%}
+{%- props
+    ## number The heading level (1-6).
+    level = 2
+-%}
 {%- set element = 'h' ~ level -%}
 <{{ element }}
     {{ attributes.defaults({
         class: 'text-base/7 font-semibold text-zinc-950 sm:text-sm/6 dark:text-white',
     }) }}
 >
+    {##- The subheading text. -#}
     {%- block content %}{% endblock -%}
 </{{ element }}>

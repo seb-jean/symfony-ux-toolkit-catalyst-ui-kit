@@ -1,8 +1,11 @@
-{# @prop href string|null The URL for the row when used as a link. #}
-{# @prop target string|null The target for the row when used as a link. #}
-{# @prop title string|null The title for the row when used as a link. #}
-{# @block content The table cells. #}
-{%- props href = null, target = null, title = null -%}
+{%- props
+    ## string|null The URL for the row when used as a link.
+    href = null,
+    ## string|null The target for the row when used as a link.
+    target = null,
+    ## string|null The title for the row when used as a link.
+    title = null
+-%}
 {%- do provide('tableRow.href', href) -%}
 {%- do provide('tableRow.target', target) -%}
 {%- do provide('tableRow.title', title) -%}
@@ -32,5 +35,6 @@
         class: style.apply({href: href is not null, striped: _table_striped}),
     }) }}
 >
+    {##- The table cells. -#}
     {%- block content %}{% endblock -%}
 </tr>

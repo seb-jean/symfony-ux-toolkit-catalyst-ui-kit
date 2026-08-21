@@ -1,6 +1,7 @@
-{# @prop disabled boolean Whether or not to disable the entire field. #}
-{# @block content The switch, label, and optional description. #}
-{%- props disabled = false -%}
+{%- props
+    ## boolean Whether or not to disable the entire field.
+    disabled = false
+-%}
 {%- set _fieldset_disabled = inject('fieldset.disabled', false) -%}
 {%- set disabled = disabled or _fieldset_disabled -%}
 {%- do provide('switchField.disabled', disabled) -%}
@@ -23,5 +24,6 @@
         )
     }) }}
 >
+    {##- The switch, label, and optional description. -#}
     {%- block content %}{% endblock -%}
 </div>

@@ -18,6 +18,8 @@ This kit requires TailwindCSS to work:
 ```css
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
     --font-sans: Inter, sans-serif;
     --font-sans--font-feature-settings: 'cv11';

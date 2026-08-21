@@ -1,11 +1,17 @@
-{# @prop disabled boolean Whether or not to disable the combobox. #}
-{# @prop invalid boolean Whether the combobox has a validation error. #}
-{# @prop anchor string Where to position the combobox dropdown. #}
-{# @prop value string The initial value for the combobox. #}
-{# @prop ariaLabel string An accessible label for the combobox input. #}
-{# @prop placeholder string The text to show when no option is selected. #}
-{# @block content The `Combobox:Option` elements. #}
-{%- props disabled = false, invalid = false, anchor = 'bottom', value = '', ariaLabel = '', placeholder = '' -%}
+{%- props
+    ## boolean Whether or not to disable the combobox.
+    disabled = false,
+    ## boolean Whether the combobox has a validation error.
+    invalid = false,
+    ## string Where to position the combobox dropdown.
+    anchor = 'bottom',
+    ## string The initial value for the combobox.
+    value = '',
+    ## string An accessible label for the combobox input.
+    ariaLabel = '',
+    ## string The text to show when no option is selected.
+    placeholder = ''
+-%}
 {%- set _fieldsetField_disabled = inject('fieldsetField.disabled', false) -%}
 {%- set disabled = disabled or _fieldsetField_disabled -%}
 <span
@@ -87,6 +93,7 @@
                 'transition-discrete transition-opacity data-leave:transition duration-100 ease-in data-closed:data-leave:opacity-0 data-transition:pointer-events-none',
             ) }}"
         >
+            {##- The `Combobox:Option` elements. -#}
             {%- block content %}{% endblock -%}
         </el-options>
     </el-autocomplete>

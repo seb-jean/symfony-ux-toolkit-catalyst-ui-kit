@@ -5,8 +5,5 @@
     "description": "Wrap your forgot password form with the AuthLayout component to create a centered forgot password page.",
     "copy-files": {
         "templates/": "templates/"
-    },
-    "dependencies": {
-        "recipe": ["button", "fieldset", "heading", "input", "text"]
     }
 }

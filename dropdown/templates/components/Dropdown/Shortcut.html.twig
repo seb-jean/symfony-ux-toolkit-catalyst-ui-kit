@@ -1,5 +1,7 @@
-{# @prop keys string|string[] The keyboard shortcut. #}
-{%- props keys -%}
+{%- props
+    ## string|string[] The keyboard shortcut.
+    keys
+-%}
 <kbd
     {{ attributes.defaults({
         class: 'col-start-5 row-start-1 flex justify-self-end',

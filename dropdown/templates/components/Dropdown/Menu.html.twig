@@ -1,6 +1,7 @@
-{# @prop anchor string Where to position the dropdown menu. #}
-{# @block content The dropdown items and sections. #}
-{%- props anchor = 'bottom' -%}
+{%- props
+    ## string Where to position the dropdown menu.
+    anchor = 'bottom'
+-%}
 <el-menu
     popover
     anchor="{{ anchor }}"
@@ -25,5 +26,6 @@
         ),
     }) }}
 >
+    {##- The dropdown items and sections. -#}
     {%- block content %}{% endblock -%}
 </el-menu>

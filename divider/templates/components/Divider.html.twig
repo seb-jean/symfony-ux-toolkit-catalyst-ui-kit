@@ -1,5 +1,7 @@
-{# @prop soft boolean Whether the divider should use a softer color. #}
-{%- props soft = false -%}
+{%- props
+    ## boolean Whether the divider should use a softer color.
+    soft = false
+-%}
 {%- set style = html_cva(
     base: 'w-full border-t',
     variants: {

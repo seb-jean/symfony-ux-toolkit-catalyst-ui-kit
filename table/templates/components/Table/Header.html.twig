@@ -1,4 +1,3 @@
-{# @block content The header cell content. #}
 {%- set _table_bleed = inject('table.bleed', false) -%}
 {%- set _table_grid = inject('table.grid', false) -%}
 {%- set style = html_cva(
@@ -17,5 +16,6 @@
         class: style.apply({grid: _table_grid, bleed: _table_bleed}),
     }) }}
 >
+    {##- The header cell content. -#}
     {%- block content %}{% endblock -%}
 </th>

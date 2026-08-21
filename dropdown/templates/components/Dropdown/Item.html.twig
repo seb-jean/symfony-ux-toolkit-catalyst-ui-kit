@@ -1,7 +1,9 @@
-{# @prop href string|null The target URL when using the item as a link. #}
-{# @prop disabled bool Whether or not to disable the item. #}
-{# @block content The dropdown item text. #}
-{%- props href = null, disabled = false -%}
+{%- props
+    ## string|null The target URL when using the item as a link.
+    href = null,
+    ## bool Whether or not to disable the item.
+    disabled = false
+-%}
 {%- set element = href is not empty ? 'a' : 'button' -%}
 <{{ element }}
     {% if href is not empty and not disabled %}href="{{ href }}"{% endif %}
@@ -30,5 +32,6 @@
         ),
     }) }}
 >
+    {##- The dropdown item text. -#}
     {%- block content %}{% endblock -%}
 </{{ element }}>

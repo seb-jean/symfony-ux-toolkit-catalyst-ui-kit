@@ -5,8 +5,5 @@
     "description": "Wrap your registration form with the AuthLayout component to create a centered registration page.",
     "copy-files": {
         "templates/": "templates/"
-    },
-    "dependencies": {
-        "recipe": ["button", "checkbox", "fieldset", "heading", "input", "select", "text"]
     }
 }
