@@ -1,7 +1,11 @@
-{# @prop disabled boolean Whether or not to disable the textarea. #}
-{# @prop invalid boolean Whether the textarea is in an invalid state. #}
-{# @prop resizable boolean Whether the textarea is resizable. #}
-{%- props disabled = false, invalid = false, resizable = true -%}
+{%- props
+    ## boolean Whether or not to disable the textarea.
+    disabled = false,
+    ## boolean Whether the textarea is in an invalid state.
+    invalid = false,
+    ## boolean Whether the textarea is resizable.
+    resizable = true
+-%}
 {%- set _fieldsetField_disabled = inject('fieldsetField.disabled', false) -%}
 {%- set disabled = disabled or _fieldsetField_disabled -%}
 <span

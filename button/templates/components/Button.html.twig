@@ -1,10 +1,15 @@
-{# @prop href string|null The target URL when using the button as a link. #}
-{# @prop color string The color variant the button should use. #}
-{# @prop outline boolean Whether to use the outline button style. #}
-{# @prop plain boolean Whether to use the plain button style. #}
-{# @prop disabled boolean Whether or not to disable the button. #}
-{# @block content The button label and/or icon. #}
-{%- props href = null, color = 'dark/zinc', outline = false, plain = false, disabled = false -%}
+{%- props
+    ## string|null The target URL when using the button as a link.
+    href = null,
+    ## string The color variant the button should use.
+    color = 'dark/zinc',
+    ## boolean Whether to use the outline button style.
+    outline = false,
+    ## boolean Whether to use the plain button style.
+    plain = false,
+    ## boolean Whether or not to disable the button.
+    disabled = false
+-%}
 {%- set element = href is not empty ? 'a' : 'button' -%}
 {%- set style = html_cva(
     base: [
@@ -180,6 +185,7 @@
     }) }}
 >
     <twig:Button:TouchTarget>
+        {## The button label and/or icon. -#}
         {{ block(outerBlocks.content) }}
     </twig:Button:TouchTarget>
 </{{ element }}>

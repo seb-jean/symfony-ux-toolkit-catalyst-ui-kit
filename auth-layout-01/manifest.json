@@ -5,8 +5,5 @@
     "description": "Wrap your login form with the AuthLayout component to create a centered login page.",
     "copy-files": {
         "templates/": "templates/"
-    },
-    "dependencies": {
-        "recipe": ["button", "checkbox", "fieldset", "heading", "input", "text"]
     }
 }

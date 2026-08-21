@@ -1,12 +1,19 @@
-{# @prop disabled boolean Whether or not to disable the listbox. #}
-{# @prop invalid boolean Whether or not the listbox has a validation error. #}
-{# @prop name string The name to use when submitting an HTML form. #}
-{# @prop anchor string Where to position the listbox dropdown. #}
-{# @prop defaultValue string The initial value for the listbox. #}
-{# @prop ariaLabel string An accessible label for the listbox button. #}
-{# @prop placeholder string The text to show when no option is selected. #}
-{# @block content The `Listbox:Option` elements. #}
-{%- props disabled = false, invalid = false, name = '', anchor = 'bottom', defaultValue = '', ariaLabel = '', placeholder = '' -%}
+{%- props
+    ## boolean Whether or not to disable the listbox.
+    disabled = false,
+    ## boolean Whether or not the listbox has a validation error.
+    invalid = false,
+    ## string The name to use when submitting an HTML form.
+    name = '',
+    ## string Where to position the listbox dropdown.
+    anchor = 'bottom',
+    ## string The initial value for the listbox.
+    defaultValue = '',
+    ## string An accessible label for the listbox button.
+    ariaLabel = '',
+    ## string The text to show when no option is selected.
+    placeholder = ''
+-%}
 {%- set _fieldsetField_disabled = inject('fieldsetField.disabled', false) -%}
 {%- set disabled = disabled or _fieldsetField_disabled -%}
 <el-select data-slot="control" class="block" value="{{ defaultValue }}" {% if name is not empty %}name="{{ name }}"{% endif %}>
@@ -81,6 +88,7 @@
             'transition-discrete transition-opacity duration-100 ease-in data-closed:data-leave:opacity-0 data-transition:pointer-events-none'
         ) }}"
     >
+        {##- The `Listbox:Option` elements. -#}
         {%- block content %}{% endblock -%}
     </el-options>
 </el-select>

@@ -1,9 +1,9 @@
-{# @block content The sidebar items. #}
 <div
     data-slot="section"
     {{ attributes.defaults({
         class: 'flex flex-col gap-0.5',
     }) }}
 >
+    {##- The sidebar items. -#}
     {%- block content %}{% endblock -%}
 </div>

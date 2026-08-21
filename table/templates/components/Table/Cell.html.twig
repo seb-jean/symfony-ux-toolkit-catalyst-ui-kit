@@ -1,4 +1,3 @@
-{# @block content The cell content. #}
 {%- set _table_bleed = inject('table.bleed', false) -%}
 {%- set _table_dense = inject('table.dense', false) -%}
 {%- set _table_grid = inject('table.grid', false) -%}
@@ -39,5 +38,6 @@
             {{ attributes.nested('link').defaults({tabindex: '-1'}) }}
         ></a>
     {%- endif -%}
+    {##- The cell content. -#}
     {%- block content %}{% endblock -%}
 </td>

@@ -1,9 +1,13 @@
-{# @prop bleed boolean Whether the table should bleed into the gutter. #}
-{# @prop dense boolean Whether the table should use condensed spacing. #}
-{# @prop grid boolean Whether display vertical grid lines. #}
-{# @prop striped boolean Whether display striped table rows. #}
-{# @block content The table head and body. #}
-{%- props bleed = false, dense = false, grid = false, striped = false -%}
+{%- props
+    ## boolean Whether the table should bleed into the gutter.
+    bleed = false,
+    ## boolean Whether the table should use condensed spacing.
+    dense = false,
+    ## boolean Whether display vertical grid lines.
+    grid = false,
+    ## boolean Whether display striped table rows.
+    striped = false
+-%}
 {%- do provide('table.bleed', bleed) -%}
 {%- do provide('table.dense', dense) -%}
 {%- do provide('table.grid', grid) -%}
@@ -16,6 +20,7 @@
     >
         <div class="{{ 'inline-block min-w-full align-middle' ~ (not bleed ? ' sm:px-(--gutter)') }}">
             <table class="min-w-full text-left text-sm/6 text-zinc-950 dark:text-white">
+                {##- The table head and body. -#}
                 {%- block content %}{% endblock -%}
             </table>
         </div>

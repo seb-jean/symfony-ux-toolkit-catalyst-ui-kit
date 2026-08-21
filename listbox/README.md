@@ -175,15 +175,15 @@ Add an icon to a `Listbox:Option` by inserting it before your `Listbox:Label`:
         <twig:Fieldset:Label>Alignment</twig:Fieldset:Label>
         <twig:Listbox name="alignment" defaultValue="left">
             <twig:Listbox:Option value="left">
-                <twig:ux:icon name="heroicons:bars-3-bottom-left" />
+                <twig:ux:icon name="heroicons:bars-3-bottom-left-16-solid" />
                 <twig:Listbox:Label>Left</twig:Listbox:Label>
             </twig:Listbox:Option>
             <twig:Listbox:Option value="right">
-                <twig:ux:icon name="heroicons:bars-3-bottom-right" />
+                <twig:ux:icon name="heroicons:bars-3-bottom-right-16-solid" />
                 <twig:Listbox:Label>Right</twig:Listbox:Label>
             </twig:Listbox:Option>
             <twig:Listbox:Option value="justified">
-                <twig:ux:icon name="heroicons:bars-3" />
+                <twig:ux:icon name="heroicons:bars-3-16-solid" />
                 <twig:Listbox:Label>Justified</twig:Listbox:Label>
             </twig:Listbox:Option>
         </twig:Listbox>

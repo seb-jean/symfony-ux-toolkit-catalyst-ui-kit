@@ -1,7 +1,9 @@
-{# @prop value string The value submitted when this option is selected. #}
-{# @prop disabled bool Whether or not to disabled the option. #}
-{# @block content The option content, typically a `Listbox:Label` and optionally a `Listbox:Description`. #}
-{%- props value, disabled = false -%}
+{%- props
+    ## string The value submitted when this option is selected.
+    value,
+    ## bool Whether or not to disabled the option.
+    disabled = false
+-%}
 
 <el-option
     {% if disabled %}disabled data-disabled{% endif %}
@@ -34,6 +36,7 @@
         # Avatars
         '*:data-[slot=avatar]:-mx-0.5 *:data-[slot=avatar]:size-6 sm:*:data-[slot=avatar]:size-5'
     ) }}">
+        {##- The option content, typically a `Listbox:Label` and optionally a `Listbox:Description`. -#}
         {%- block content %}{% endblock -%}
     </span>
 </el-option>

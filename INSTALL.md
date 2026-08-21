@@ -13,32 +13,59 @@ This kit requires TailwindCSS to work:
 
 ## Installation
 
-1. Modify the file `assets/styles/app.css` with the following content:
+1. Install the Inter font family. [Download Inter](https://rsms.me/inter/download/), then put the `Inter-Regular.woff2`, `Inter-Medium.woff2` and `Inter-SemiBold.woff2` files from its `web` folder in the `assets/fonts/` directory of your project:
+
+```text
+assets/
+├── fonts/
+│   ├── Inter-Medium.woff2
+│   ├── Inter-Regular.woff2
+│   └── Inter-SemiBold.woff2
+└── styles/
+    ├── app.css
+    └── fonts.css
+```
+
+Then create the file `assets/styles/fonts.css` with the following content:
 
 ```css
-@import 'tailwindcss';
+@font-face {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../fonts/Inter-Regular.woff2") format("woff2");
+}
 
-@theme {
-    --font-sans: Inter, sans-serif;
-    --font-sans--font-feature-settings: 'cv11';
+@font-face {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("../fonts/Inter-Medium.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("../fonts/Inter-SemiBold.woff2") format("woff2");
 }
 ```
 
-2. Install the Inter font family, either with `importmap:require` for AssetMapper, or `npm` for Webpack Encore:
+2. Modify the file `assets/styles/app.css` with the following content:
 
-```bash
-# With AssetMapper
-php bin/console importmap:require @fontsource/inter/latin.css @fontsource/inter/latin-italic.css
+```css
+@import "tailwindcss";
+@import "./fonts.css";
 
-# With npm
-npm install @fontsource/inter
-```
+@custom-variant dark (&:where(.dark, .dark *));
 
-Then import the font in your JavaScript entrypoint (e.g. `assets/app.js`):
-
-```js
-import '@fontsource/inter/latin.css';
-import '@fontsource/inter/latin-italic.css';
+@theme {
+    --font-sans: Inter, sans-serif;
+    --font-sans--font-feature-settings: "cv11";
+}
 ```
 
 3. Configure the `heroicons` icon set to automatically add the `data-slot="icon"` attribute:

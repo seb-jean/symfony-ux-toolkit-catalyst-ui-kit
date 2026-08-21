@@ -1,6 +1,9 @@
-{# @prop color string The color of the badge. #}
-{# @prop href string|null The target URL when using the button as a link. #}
-{%- props color = 'zinc', href = null -%}
+{%- props
+    ## string The color of the badge.
+    color = 'zinc',
+    ## string|null The target URL when using the button as a link.
+    href = null
+-%}
 {%- set element = href is not empty ? 'a' : 'button' -%}
 <{{ element }}
     {% if href is not empty %}href="{{ href }}"{% endif %}

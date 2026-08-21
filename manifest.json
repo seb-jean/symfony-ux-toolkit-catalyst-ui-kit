@@ -5,14 +5,5 @@
     "license": "MIT",
     "homepage": "https://ux.symfony.com/toolkit/kits/catalyst",
     "color": "#19181b",
-    "icon": "icon.svg",
-    "dependencies": {
-        "npm": [
-            "@fontsource/inter"
-        ],
-        "importmap": [
-            "@fontsource/inter/latin.css",
-            "@fontsource/inter/latin-italic.css"
-        ]
-    }
+    "icon": "icon.svg"
 }

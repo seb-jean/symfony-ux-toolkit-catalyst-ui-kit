@@ -9,6 +9,9 @@
         "composer": [
             "twig/extra-bundle",
             "twig/html-extra:^3.12.0"
+        ],
+        "recipe": [
+            "button"
         ]
     }
 }

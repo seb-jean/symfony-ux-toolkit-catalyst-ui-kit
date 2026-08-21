@@ -99,7 +99,7 @@ Add content to your alert using the `Alert:Body` component:
         <twig:Alert:Title>Verification required</twig:Alert:Title>
         <twig:Alert:Description>To continue, please enter your password.</twig:Alert:Description>
         <twig:Alert:Body>
-            <twig:Input name="password" type="password" aria-label="Password" placeholder="•••••••" autofocus />
+            <twig:Input name="password" type="password" aria-label="Password" placeholder="•••••••" />
         </twig:Alert:Body>
         <twig:Alert:Actions>
             <twig:Button plain {{ ...alert_close_attrs }}>

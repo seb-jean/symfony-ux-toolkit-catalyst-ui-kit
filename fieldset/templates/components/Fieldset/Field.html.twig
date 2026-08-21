@@ -1,6 +1,7 @@
-{# @prop disabled boolean Whether or not to disable the entire field. #}
-{# @block content The field content, typically includes `Fieldset:Label`, a form control, and optionally `Fieldset:Description` or `Fieldset:ErrorMessage`. #}
-{%- props disabled = false -%}
+{%- props
+    ## boolean Whether or not to disable the entire field.
+    disabled = false
+-%}
 {%- set _fieldset_disabled = inject('fieldset.disabled', false) -%}
 {%- set disabled = disabled or _fieldset_disabled -%}
 {%- do provide('fieldsetField.disabled', disabled) -%}
@@ -16,5 +17,6 @@
         ),
     }) }}
 >
+    {##- The field content, typically includes `Fieldset:Label`, a form control, and optionally `Fieldset:Description` or `Fieldset:ErrorMessage`. -#}
     {%- block content %}{% endblock -%}
 </div>

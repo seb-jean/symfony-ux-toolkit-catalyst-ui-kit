@@ -295,8 +295,6 @@ Use the `class` attribute on the `Combobox` component to make layout adjustments
 </div>
 ```
 
-Be aware that the `class` attribute is a sharp knife — make sure to only add classes that don't conflict with classes the component already includes or you'll get unexpected results.
-
 ## API Reference
 
 ::: api-reference

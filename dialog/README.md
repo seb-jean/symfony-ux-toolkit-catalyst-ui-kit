@@ -175,6 +175,8 @@ Add the `autofocus` attribute to any form control or button in the dialog to aut
 </div>
 ```
 
+Elements will not be automatically focused on touch devices to prevent layout shifts caused by the software keyboard opening.
+
 ### With scrolling content
 
 Dialogs automatically become scrollable if their content is taller than the viewport:

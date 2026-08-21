@@ -1,7 +1,9 @@
-{# @prop current boolean Whether or not it is the current navigation item. #}
-{# @prop href string|null The target URL when using the button as a link. #}
-{# @block content The item label and/or icon. #}
-{%- props href = null, current = false -%}
+{%- props
+    ## string|null The target URL when using the button as a link.
+    href = null,
+    ## boolean Whether or not it is the current navigation item.
+    current = false
+-%}
 {%- set element = href is not empty ? 'a' : 'button' -%}
 {%- set style = html_cva(
     base: [
@@ -44,6 +46,7 @@
         }) }}
     >
         <twig:Button:TouchTarget>
+            {## The item label and/or icon. -#}
             {{ block(outerBlocks.content) }}
         </twig:Button:TouchTarget>
     </{{ element }}>

@@ -1,6 +1,7 @@
-{# @prop value string The value submitted when this option is selected. #}
-{# @block content The option content, typically a `Combobox:Label` and optionally a `Combobox:Description`. #}
-{%- props value -%}
+{%- props
+    ## string The value submitted when this option is selected.
+    value
+-%}
 
 <el-option
     value="{{ value }}"
@@ -29,6 +30,7 @@
         # Avatars
         '*:data-[slot=avatar]:-mx-0.5 *:data-[slot=avatar]:size-6 sm:*:data-[slot=avatar]:size-5',
     ) }}">
+        {##- The option content, typically a `Combobox:Label` and optionally a `Combobox:Description`. -#}
         {%- block content %}{% endblock -%}
     </span>
 </el-option>

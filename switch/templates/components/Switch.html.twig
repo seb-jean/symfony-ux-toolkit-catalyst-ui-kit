@@ -1,9 +1,15 @@
-{# @prop color string The color variant the switch should use. #}
-{# @prop disabled boolean Whether or not to disable the switch. #}
-{# @prop name string The name to use when submitting an HTML form. #}
-{# @prop value string The value to use when submitting an HTML form. #}
-{# @prop checked boolean Whether or not the switch is checked. #}
-{%- props color = 'dark/zinc', disabled = false, name, value = '', checked = false -%}
+{%- props
+    ## string The color variant the switch should use.
+    color = 'dark/zinc',
+    ## boolean Whether or not to disable the switch.
+    disabled = false,
+    ## string The name to use when submitting an HTML form.
+    name,
+    ## string The value to use when submitting an HTML form.
+    value = '',
+    ## boolean Whether or not the switch is checked.
+    checked = false
+-%}
 {%- set _switchField_disabled = inject('switchField.disabled', false) -%}
 {%- set disabled = disabled or _switchField_disabled -%}
 {%- set style = html_cva(

@@ -1,6 +1,7 @@
-{# @prop disabled boolean Whether or not to disable the entire field. #}
-{# @block content The radio, label, and optional description. #}
-{%- props disabled = false -%}
+{%- props
+    ## boolean Whether or not to disable the entire field.
+    disabled = false
+-%}
 {%- set _fieldset_disabled = inject('fieldset.disabled', false) -%}
 {%- set _radioGroup_disabled = inject('radioGroup.disabled', false) -%}
 {%- set disabled = disabled or _fieldset_disabled or _radioGroup_disabled -%}
@@ -24,5 +25,6 @@
         )
     }) }}
 >
+    {##- The radio, label, and optional description. -#}
     {%- block content %}{% endblock -%}
 </div>

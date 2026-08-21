@@ -1,6 +1,7 @@
-{# @prop disabled boolean Whether or not to disable the entire list. #}
-{# @block content The radio fields. #}
-{%- props disabled = false -%}
+{%- props
+    ## boolean Whether or not to disable the entire list.
+    disabled = false
+-%}
 {%- do provide('radioGroup.disabled', disabled) -%}
 <div
     data-slot="control"
@@ -14,5 +15,6 @@
         )
     }) }}
 >
+    {##- The radio fields. -#}
     {%- block content %}{% endblock -%}
 </div>

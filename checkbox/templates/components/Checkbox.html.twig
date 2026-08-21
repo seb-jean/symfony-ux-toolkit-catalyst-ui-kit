@@ -1,9 +1,15 @@
-{# @prop color string The color variant the checkbox should use. #}
-{# @prop disabled boolean Whether or not to disable the checkbox. #}
-{# @prop name string The name to use when submitting an HTML form. #}
-{# @prop value string The value to use when submitting an HTML form. #}
-{# @prop checked boolean Whether or not the checkbox is checked. #}
-{%- props color = 'dark/zinc', disabled = false, name, value = '', checked = false -%}
+{%- props
+    ## string The color variant the checkbox should use.
+    color = 'dark/zinc',
+    ## boolean Whether or not to disable the checkbox.
+    disabled = false,
+    ## string The name to use when submitting an HTML form.
+    name,
+    ## string The value to use when submitting an HTML form.
+    value = '',
+    ## boolean Whether or not the checkbox is checked.
+    checked = false
+-%}
 {%- set _checkboxField_disabled = inject('checkboxField.disabled', false) -%}
 {%- set disabled = disabled or _checkboxField_disabled -%}
 {%- set style = html_cva(
