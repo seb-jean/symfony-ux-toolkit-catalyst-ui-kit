@@ -221,6 +221,48 @@ The `Sidebar:Item` component is designed to work best with 20×20 icons.
 
 If you're using your own custom icons, make sure they include the `data-slot="icon"` attribute so they receive the correct styles.
 
+### With badges
+
+Use the `Sidebar:Badge` component after the `Sidebar:Label` to add a badge to a sidebar item:
+
+```twig {"preview":true}
+<div class="h-96 w-full">
+    <div class="h-full w-64 border-r border-zinc-950/5 bg-zinc-100 dark:bg-zinc-950">
+        <twig:Sidebar>
+            <twig:Sidebar:Body>
+                <twig:Sidebar:Section>
+                    <twig:Sidebar:Item href="/">
+                        <twig:ux:icon name="heroicons:home-20-solid" />
+                        <twig:Sidebar:Label>Home</twig:Sidebar:Label>
+                    </twig:Sidebar:Item>
+                    <twig:Sidebar:Item href="/events" current>
+                        <twig:ux:icon name="heroicons:square-2-stack-20-solid" />
+                        <twig:Sidebar:Label>Events</twig:Sidebar:Label>
+                        <twig:Sidebar:Badge>12</twig:Sidebar:Badge>
+                    </twig:Sidebar:Item>
+                    <twig:Sidebar:Item href="/orders">
+                        <twig:ux:icon name="heroicons:ticket-20-solid" />
+                        <twig:Sidebar:Label>Orders</twig:Sidebar:Label>
+                        <twig:Sidebar:Badge>148</twig:Sidebar:Badge>
+                    </twig:Sidebar:Item>
+                    <twig:Sidebar:Item href="/broadcasts">
+                        <twig:ux:icon name="heroicons:megaphone-20-solid" />
+                        <twig:Sidebar:Label>Broadcasts</twig:Sidebar:Label>
+                        <twig:Sidebar:Badge color="red">3</twig:Sidebar:Badge>
+                    </twig:Sidebar:Item>
+                    <twig:Sidebar:Item href="/settings">
+                        <twig:ux:icon name="heroicons:cog-6-tooth-20-solid" />
+                        <twig:Sidebar:Label>Settings</twig:Sidebar:Label>
+                    </twig:Sidebar:Item>
+                </twig:Sidebar:Section>
+            </twig:Sidebar:Body>
+        </twig:Sidebar>
+    </div>
+</div>
+```
+
+Use the `color` prop to set the color of the badge.
+
 ### With active state
 
 Use the `current` prop to specify which `Sidebar:Item` is the current navigation item:
